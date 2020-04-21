@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.62.1" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>槑烎 | 1,2,∞</title>
+    <meta property="og:title" content="槑烎 | 1,2,∞">
+    <meta property="og:type" content="website">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta property="og:url" content="http://peterz.xyz/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml+xml" href="http://peterz.xyz/index.xml" title="槑烎" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <h1>
+                        <a id="logo" href="http://peterz.xyz/">
+                            槑烎
+                        </a>
+                    </h1>
+                
+                <p class="description">1,2,∞</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://peterz.xyz/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/30/%E8%BD%AC%E8%B4%B4-ubuntu%E4%B8%8Bvpn%E7%BF%BB%E5%A2%99/" title="[转贴] Ubuntu下VPN翻墙">[转贴] Ubuntu下VPN翻墙</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月30日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;div&gt; 2009-7-20 08:55 &lt;/div&gt;  ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/30/%E8%BD%AC%E8%B4%B4-ubuntu%E4%B8%8Bvpn%E7%BF%BB%E5%A2%99/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/29/ubuntu-9-04%E4%B8%8B%E9%85%8D%E7%BD%AEdvbt/" title="Ubuntu 9.04下配置DVB－T">Ubuntu 9.04下配置DVB－T</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月29日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 1。找驱动。&lt;br /&gt; 1）如果你接上电视卡，系统能够自动识别并配置好，那么这步可以跳过。如果没有识别，首先要找出你电视棒的型号。可以看看你电视棒的标签，上面应该有，例如我的是T328B4。&lt;br /&gt; 2）到&lt;a href=&quot;http://www.linuxtv.org/wiki/index.php/DVB-T_USB_Devices&quot;&gt;http://www.linuxtv.org/wiki/index.php/DVB-T_USB_Devices&lt;/a&gt;找&lt;br /&gt; 对应你电视棒的信息，看应该下载哪种驱动。例如对应T328B的驱动是Afatech AF9015。下载之后将Afatech&lt;br /&gt; AF9015拷贝到/lib/firmwares下。重启一下Gnome。这下系统就能识别电视棒了。可以用$ dmesg 查看相关信息。 &lt;/p&gt; &lt;p&gt; 2。搜台 &lt;/p&gt; &lt;p&gt; 1）安装 dvb-utils&lt;br /&gt; $ sudo apt-get install dvb-utils &lt;/p&gt; &lt;p&gt; ＃dvb-utils详细使用方法见 &lt;a href=&quot;http://www.linuxtv.org/wiki/index.php/Testing_your_DVB_device&quot;&gt;http://www.linuxtv.org/wiki/index.php/Testing_your_DVB_device&lt;/a&gt;&lt;br /&gt; 我这里只管搜台。 &lt;/p&gt; &lt;p&gt; 2）建立搜索频率表，这一步是关键！！ &lt;/p&gt; &lt;p&gt; 先建个文件夹&lt;br /&gt; mkdir ~/.tzap &lt;/p&gt; &lt;p&gt; 搜台命令是&lt;br /&gt; scan /path_to_the_initial_scan_file &gt; ~/.tzap/channels.conf &lt;/p&gt; &lt;p&gt; 命令中path_to_the_initial_scan_file是指dvb-utils预制电视频道频率的列表。文件在/usr/share/dvb/dvb-t文件夹下。是按国家地区分的。可惜中国大陆一个都没有。没有我们就新建一个，内容例如：&lt;br /&gt; T 618000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; 其中第2项618000000表示信号所在频率。618000000就是618MHz。其他参数不清楚什么意思。不过其中倒数第2。4两个参数有可能是QAM64和1/4。这要看你当地信号的参数是什么了。&lt;br /&gt; 如果这个文件中只有这一条数据的话，搜索时，电视棒只会搜索这一个频率。如果你能得知你当地或附近城市DVBT电视信号的频率，那可以节省一些时间。如果&lt;br /&gt; 不知道，那只能用笨办法，一个一个频率搜索。（这里频率后的参数暂取8MHz 2/3 AUTO QAM16 8k 1/8&lt;br /&gt; NONE，如果你搜索不成功，可以改成8MHz 2/3 NONE QAM16 8k 1/4 NONE试试） &lt;/p&gt; &lt;p&gt; DVBT电视信号一般的工作范围是从440MHz到700MHz，这里我就在新建文件里中加入如下信息：&lt;br /&gt; T 440000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; T 441000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; T 442000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; T 443000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; T 444000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE &lt;/p&gt; &lt;p&gt; 一直到 &lt;/p&gt; &lt;p&gt; T 700000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE &lt;/p&gt; &lt;p&gt; 之后将文件保存在/usr/share/dvb/dvb-t文件夹下。例如文件名为AAAAAAA（注意没有后缀名） &lt;/p&gt; &lt;p&gt; 3）搜台&lt;br /&gt; scan /usr/share/dvb/dvb-t/AAAAAAA &gt; ~/.……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/29/ubuntu-9-04%E4%B8%8B%E9%85%8D%E7%BD%AEdvbt/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/28/j10%E7%A9%BA%E4%B8%AD%E5%8A%A0%E6%B2%B9/" title="J10空中加油">J10空中加油</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月28日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; &lt;img src=&quot;http://farm4.static.flickr.com/3448/3764658625_e6c548326c.jpg&quot; border=&quot;0&quot; /&gt; &lt;/p&gt; &lt;p&gt; &lt;img src=&quot;http://farm4.static.flickr.com/3566/3764659101_ce5febdc35.jpg&quot; border=&quot;0&quot; /&gt; &lt;/p&gt; &lt;p&gt; &lt;img src=&quot;http://farm3.static.flickr.com/2580/3764659381_94590fb86c.jpg&quot; border=&quot;0&quot; /&gt; &lt;/p&gt; &lt;p&gt; &lt;img src=&quot;http://farm4.static.flickr.com/3595/3765454532_aaa898e6cb.jpg&quot; border=&quot;0&quot; /&gt; &lt;/p&gt; &lt;p&gt; &lt;img src=&quot;http://farm3.static.flickr.com/2448/3765456644_0d367742b9.jpg&quot; border=&quot;0&quot; /&gt; &lt;/p&gt;  ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/28/j10%E7%A9%BA%E4%B8%AD%E5%8A%A0%E6%B2%B9/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/22/%E8%BD%ACcookies-sqlite%E9%80%A0%E6%88%90firefox%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81%E4%B8%8D%E8%83%BD%E4%BF%9D%E5%AD%98%E7%9A%84%E9%97%AE%E9%A2%98/" title="[转]cookies.sqlite造成FireFox登录状态不能保存的问题">[转]cookies.sqlite造成FireFox登录状态不能保存的问题</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 从网上找了一大堆解决方案，归结一下大约如下： &lt;/p&gt; &lt;p&gt; * 在about:config中增加network.cookie.maxNumber及network.cookie.maxPerHost两项&lt;br /&gt; * 在about:config中修改general.useragent.override值（我的原来没有，手工加了一个）&lt;br /&gt; * 停用adblock plus及可能会造成问题的其它FireFox扩展&lt;br /&gt; * 停用防火墙（我用的是NOD32）&lt;br /&gt; * 停用代理服务器&lt;br /&gt; * 删除C:Documents and Settings系统登录名Application DataMozillaFirefoxProfiles随机文件夹名cookies.sqlite &lt;/p&gt; &lt;p&gt; 但实际一一照做后却没有一个见效，正郁闷的时候忽然想起我用的FireFox不是安装版，而是Portable版，Portable版的软件在软件退出时会把软件用到的注册表、配置文件等全都保存在软件目录下的data文件夹中，赶紧到“Dataprofile”中一找，还真有个cookies.sqlite文件，有268K之“巨”，删除之……登录Gmail，重启FireFox，再进Gmail.com，呵呵，搞定！ &lt;/p&gt;  ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/22/%E8%BD%ACcookies-sqlite%E9%80%A0%E6%88%90firefox%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81%E4%B8%8D%E8%83%BD%E4%BF%9D%E5%AD%98%E7%9A%84%E9%97%AE%E9%A2%98/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/21/virtualbox%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A9%BA%E9%97%B4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" title="VirtualBox的数据空间使用方法">VirtualBox的数据空间使用方法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 2.进入虚拟机XP系统，右击我的电脑－》映射网络驱动器。选择vitualbox shared folders. &lt;/p&gt; &lt;p&gt; 3.添加完成之后，“共享数据空间”就成了一个网络驱动器。 &lt;/p&gt;  ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/21/virtualbox%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A9%BA%E9%97%B4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/21/ubuntu%E4%B8%8B%E5%BC%80%E5%90%AFvirtualbox%E7%9A%84usb%E8%AE%BE%E5%A4%87%E6%94%AF%E6%8C%81/" title="Ubuntu下开启virtualbox的usb设备支持">Ubuntu下开启virtualbox的usb设备支持</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 安装好的virtualbox默认也不支持usb设备的，需要手工修改一些设置。 &lt;/p&gt; &lt;p&gt; 1.修改为usb设备增加普通用户权限&lt;br /&gt; 1.1 增加一个名为usbfs的用户组&lt;br /&gt; 代码:&lt;br /&gt; &lt;a href=&quot;mailto:YOURNAME@YOURNAME-laptop:~$&quot;&gt;YOURNAME@YOURNAME-laptop:~$&lt;/a&gt; sudo groupadd usbfs&lt;br /&gt; &lt;/p&gt; &lt;p&gt; 1.2 增加当前用户到工作组&lt;br /&gt; 代码:&lt;br /&gt; &lt;a href=&quot;mailto:YOURNAME@YOURNAME-laptop:~$&quot;&gt;YOURNAME@YOURNAME-laptop:~$&lt;/a&gt; sudo adduser YOURNAME usbfs //其中YOURNAME是本人系统的登录名字&lt;br /&gt; &lt;/p&gt; &lt;p&gt; 1.3 得到usbfs组的id&lt;br /&gt; 执行如下命令&lt;br /&gt; 代码:&lt;br /&gt; &lt;a href=&quot;mailto:YOURNAME@YOURNAME-laptop:~$&quot;&gt;YOURNAME@YOURNAME-laptop:~$&lt;/a&gt; cat /etc/group | grep usbfs&lt;br /&gt; usbfs:x:1002:YOURNAME,root &lt;/p&gt; &lt;p&gt; 其中1002就是usbfs组的id了。 &lt;/p&gt; &lt;p&gt; 1.4 修改 /etc/fstab 文件&lt;br /&gt; 代码:&lt;br /&gt; &lt;a href=&quot;mailto:YOURNAME@YOURNAME-laptop:~$&quot;&gt;YOURNAME@YOURNAME-laptop:~$&lt;/a&gt; sudo gedit /etc/fstab &lt;/p&gt; &lt;p&gt; 在文件的末尾增加一行&lt;br /&gt; 代码:&lt;br /&gt; none /proc/bus/usb usbfs devgid=1002,devmode=664 0 0 &lt;/p&gt; &lt;p&gt; 其中 devgid=1002，其中的1002就是刚才的usbfs的组id &lt;/p&gt; &lt;p&gt; 1.……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/21/ubuntu%E4%B8%8B%E5%BC%80%E5%90%AFvirtualbox%E7%9A%84usb%E8%AE%BE%E5%A4%87%E6%94%AF%E6%8C%81/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/21/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEtor/" title="Ubuntu下配置Tor">Ubuntu下配置Tor</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 1。安装 privoxy： &lt;/p&gt; &lt;p&gt; sudo apt-get install tor privoxy &lt;/p&gt; &lt;p&gt; 2。安装Tor： &lt;/p&gt; &lt;p&gt; 由于9.04官方源中没有tor了，所以只能自行添加源 &lt;/p&gt; &lt;p&gt; deb &lt;a href=&quot;http://mirror.noreply.org/pub/tor&quot;&gt;http://mirror.noreply.org/pub/tor&lt;/a&gt; etch main&lt;br /&gt; deb-src &lt;a href=&quot;http://mirror.noreply.org/pub/tor&quot;&gt;http://mirror.noreply.org/pub/tor&lt;/a&gt; etch main &lt;/p&gt; &lt;p&gt; 更新：如果是9.04，可能还需要添加密钥： &lt;/p&gt; &lt;p&gt; gpg &amp;#8211;keyserver keys.gnupg.net &amp;#8211;recv 94C09C7F&lt;br /&gt; gpg &amp;#8211;export 94C09C7F | sudo apt-key add &amp;#8211; &lt;/p&gt; &lt;p&gt; 然后在终端执行 &lt;/p&gt; &lt;p&gt; sudo apt-get update&lt;br /&gt; sudo apt-get install tor &lt;/p&gt; &lt;p&gt; 即可完成tor安装 &lt;/p&gt; &lt;p&gt; 3。配置Tor： &lt;/p&gt; &lt;p&gt; 在终端执行 &lt;/p&gt; &lt;p&gt; sudo gedit /etc/privoxy/config &lt;/p&gt; &lt;p&gt; 在最前面加上下面这一行（别漏了那个不起眼的“.……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/21/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEtor/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/20/%E8%A7%A3%E5%86%B3ubuntu%E4%B8%8Bflash%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" title="解决ubuntu下flash中文乱码">解决ubuntu下flash中文乱码</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 完工。&lt;br /&gt;&lt;/span&gt;&lt;/div&gt; &lt;/div&gt; ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/20/%E8%A7%A3%E5%86%B3ubuntu%E4%B8%8Bflash%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/18/ubuntu-%E4%B8%8B%E5%90%8C%E6%AD%A5evolution%E5%92%8Cgoogle%E6%97%A5%E5%8E%86/" title="Ubuntu 下同步Evolution和Google日历">Ubuntu 下同步Evolution和Google日历</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月18日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 2.在终端中输入：&lt;font face=&quot;NSimsun&quot;&gt;/usr/lib/evolution-webcal/evolution-webcal YOUR_PRIVATE_ICAL_URL&lt;/font&gt;&lt;br /&gt; 3.设置同步时间 &lt;/p&gt; &lt;p&gt; 完工。 &lt;/p&gt; &lt;p&gt; &lt;/p&gt;  ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/18/ubuntu-%E4%B8%8B%E5%90%8C%E6%AD%A5evolution%E5%92%8Cgoogle%E6%97%A5%E5%8E%86/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/09/ubuntu%E4%B8%8B%E6%B7%BB%E5%8A%A0%E5%BE%B7%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/" title="Ubuntu下添加德语输入法。">Ubuntu下添加德语输入法。</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月9日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2009/07/09/ubuntu%E4%B8%8B%E6%B7%BB%E5%8A%A0%E5%BE%B7%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/">阅读全文</a></p>
+    </article>
+    
+    
+
+
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="http://peterz.xyz/page/10/">上一页</a>
+    </li>
+    
+
+    
+
+    
+        
+        
+    
+    
+
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/">1</a>
+        </li>
+        
+    
+        
+        <li>
+            <span>...</span>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/page/9/">9</a>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/page/10/">10</a>
+        </li>
+        
+    
+        
+        
+        <li  class="current">
+            <a href="http://peterz.xyz/page/11/">11</a>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/page/12/">12</a>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/page/13/">13</a>
+        </li>
+        
+    
+        
+        <li>
+            <span>...</span>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/page/16/">16</a>
+        </li>
+        
+    
+
+    
+    
+
+    <li class="next">
+        <a href="http://peterz.xyz/page/12/">下一页</a>
+    </li>
+    
+</ol>
+
+
+
+
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://peterz.xyz/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="FRP安装记录">FRP安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="Typora中文主题安装记录">Typora中文主题安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="VS Code 安装记录">VS Code 安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="基于Ubuntu搭建FTP文件服务器">基于Ubuntu搭建FTP文件服务器</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/" title="远程访问家里电脑文件的方法">远程访问家里电脑文件的方法</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/11/20/scrapy-shell%E5%90%AF%E5%8A%A8ipython/" title="Scrapy shell启动IPython">Scrapy shell启动IPython</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/" title="win10下安装splash">win10下安装splash</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/" title="在Scrapy使用splash爬取动态页面">在Scrapy使用splash爬取动态页面</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/" title="安装scrapy">安装scrapy</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/" title="将scrapy爬到的内容存入sqlite数据库">将scrapy爬到的内容存入sqlite数据库</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="http://peterz.xyz/categories/ubuntu/">ubuntu (7)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/">东拉西扯 (2)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%88%91%E7%9A%84/">我的 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%94%B6%E9%9B%86/">收集 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类 (127)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E7%88%AC%E8%99%AB/">爬虫 (4)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet/">计算机与 Internet (9)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%B4%B4%E8%B4%B4%E8%B4%B4/">贴贴贴 (1)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://peterz.xyz/tags/like/">like</a>
+    
+    <a href="http://peterz.xyz/tags/microsoft/">Microsoft</a>
+    
+    <a href="http://peterz.xyz/tags/system/">system</a>
+    
+    <a href="http://peterz.xyz/tags/technical/">technical</a>
+    
+    <a href="http://peterz.xyz/tags/windows/">Windows</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%8F%8C%E5%88%83%E5%89%91/">双刃剑</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%BE%AE%E9%80%9F%E6%91%84%E5%BD%B1/">微速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%85%A2%E9%80%9F%E6%91%84%E5%BD%B1/">慢速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%88%90%E5%8A%9F/">成功</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%96%87%E4%BB%B6%E5%A4%B9/">文件夹</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/">无线网卡</a>
+    
+    <a href="http://peterz.xyz/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%86%E9%A2%91/">视频</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">解决方法</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://peterz.xyz/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="http://peterz.xyz/">槑烎 By 槑烎</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+</body>
+
+</html>

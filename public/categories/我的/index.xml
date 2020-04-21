@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>我的 on 槑烎</title>
+    <link>http://peterz.xyz/categories/%E6%88%91%E7%9A%84/</link>
+    <description>Recent content in 我的 on 槑烎</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Nov 2011 20:40:35 +0000</lastBuildDate>
+    
+	<atom:link href="http://peterz.xyz/categories/%E6%88%91%E7%9A%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>周日没事，拍个视频玩玩，大家看我拍的肿么样啊</title>
+      <link>http://peterz.xyz/2011/11/16/%E5%91%A8%E6%97%A5%E6%B2%A1%E4%BA%8B%E6%8B%8D%E4%B8%AA%E8%A7%86%E9%A2%91%E7%8E%A9%E7%8E%A9%E5%A4%A7%E5%AE%B6%E7%9C%8B%E6%88%91%E6%8B%8D%E7%9A%84%E8%82%BF%E4%B9%88%E6%A0%B7%E5%95%8A/</link>
+      <pubDate>Wed, 16 Nov 2011 20:40:35 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2011/11/16/%E5%91%A8%E6%97%A5%E6%B2%A1%E4%BA%8B%E6%8B%8D%E4%B8%AA%E8%A7%86%E9%A2%91%E7%8E%A9%E7%8E%A9%E5%A4%A7%E5%AE%B6%E7%9C%8B%E6%88%91%E6%8B%8D%E7%9A%84%E8%82%BF%E4%B9%88%E6%A0%B7%E5%95%8A/</guid>
+      <description>&amp;lt;div&amp;gt; &amp;lt;/div&amp;gt;&amp;lt;/p&amp;gt;  </description>
+    </item>
+    
+    <item>
+      <title>云 Alpha 1</title>
+      <link>http://peterz.xyz/2011/11/16/%E4%BA%91-alpha-1/</link>
+      <pubDate>Wed, 16 Nov 2011 20:40:21 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2011/11/16/%E4%BA%91-alpha-1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>奇异性，要死的刚度奇异性！！</title>
+      <link>http://peterz.xyz/2011/11/16/%E5%A5%87%E5%BC%82%E6%80%A7%E8%A6%81%E6%AD%BB%E7%9A%84%E5%88%9A%E5%BA%A6%E5%A5%87%E5%BC%82%E6%80%A7/</link>
+      <pubDate>Wed, 16 Nov 2011 20:40:08 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2011/11/16/%E5%A5%87%E5%BC%82%E6%80%A7%E8%A6%81%E6%AD%BB%E7%9A%84%E5%88%9A%E5%BA%A6%E5%A5%87%E5%BC%82%E6%80%A7/</guid>
+      <description>&amp;lt;div&amp;gt; &amp;lt;u&amp;gt;·约束条件不足&amp;lt;/u&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;u&amp;gt;·模型中有非线性单元：&amp;lt;/u&amp;gt;如间隙元、滑动元、铰链元、缆束员等。结构的一部分可能已经塌陷或分散了 &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;u&amp;gt;·材料特性为负：&amp;lt;/u&amp;gt;如在瞬态热分析中规定的密度或温度 &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;u&amp;gt;·连接点无约束，&amp;lt;/u&amp;gt;单元排列可能会引起奇异性。例如：两个水平梁单元在&amp;lt;u&amp;gt;连接点&amp;lt;/u&amp;gt;的垂直方向存在&amp;lt;u&amp;gt;无约束自由度&amp;lt;/u&amp;gt;，在线性分析中，将会忽略加在该连接点的垂直载荷。另外，考虑一个与梁单元或管单元垂直相连的无板面内的旋转刚度的壳单元，在连接点处不存在板面内的旋转刚度。在线性分析中，将会忽略加在该点处的板面内力矩。 &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;u&amp;gt;·屈曲&amp;lt;/u&amp;gt;。当应力刚化效果为负（压缩）时，结构受载后变弱。&amp;lt;strong&amp;gt;若结构变弱到刚度减小到零或为负值，就会出现奇异解&amp;lt;/strong&amp;gt;，且结构已经屈曲。会打印出“主元值为负”的消息。 &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; ~~~~~~~~~~~~~~~~~~~~~~~~ &amp;lt;/p&amp;gt; &amp;lt;div&amp;gt; 非分散缝隙又是什么！！！&amp;lt;img src=&amp;quot;http://sns.juziyue.com/static/image/smiley/comcom/7.gif&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt;&amp;lt;/p&amp;gt;  </description>
+    </item>
+    
+  </channel>
+</rss>

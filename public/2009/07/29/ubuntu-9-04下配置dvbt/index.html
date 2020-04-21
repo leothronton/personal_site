@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ubuntu 9.04下配置DVB－T | 槑烎</title>
+    <meta property="og:title" content="Ubuntu 9.04下配置DVB－T - 槑烎">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2009-07-29T05:25:28&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2009-07-29T05:25:28&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="Ubuntu 9.04下配置DVB－T">
+        <meta name="author" content="leo_thronton">
+        
+    <meta property="og:url" content="http://peterz.xyz/2009/07/29/ubuntu-9-04%E4%B8%8B%E9%85%8D%E7%BD%AEdvbt/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://peterz.xyz/">
+                        槑烎
+                    </a>
+                
+                <p class="description">1,2,∞</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://peterz.xyz/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Ubuntu 9.04下配置DVB－T</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月29日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <!-- raw HTML omitted -->
+<pre><code>&lt;p&gt;
+  1。找驱动。&lt;br /&gt; 1）如果你接上电视卡，系统能够自动识别并配置好，那么这步可以跳过。如果没有识别，首先要找出你电视棒的型号。可以看看你电视棒的标签，上面应该有，例如我的是T328B4。&lt;br /&gt; 2）到&lt;a href=&quot;http://www.linuxtv.org/wiki/index.php/DVB-T_USB_Devices&quot;&gt;http://www.linuxtv.org/wiki/index.php/DVB-T_USB_Devices&lt;/a&gt;找&lt;br /&gt; 对应你电视棒的信息，看应该下载哪种驱动。例如对应T328B的驱动是Afatech AF9015。下载之后将Afatech&lt;br /&gt; AF9015拷贝到/lib/firmwares下。重启一下Gnome。这下系统就能识别电视棒了。可以用$ dmesg 查看相关信息。
+&lt;/p&gt;
+
+&lt;p&gt;
+  2。搜台
+&lt;/p&gt;
+
+&lt;p&gt;
+  1）安装 dvb-utils&lt;br /&gt; $ sudo apt-get install dvb-utils
+&lt;/p&gt;
+
+&lt;p&gt;
+  ＃dvb-utils详细使用方法见 &lt;a href=&quot;http://www.linuxtv.org/wiki/index.php/Testing_your_DVB_device&quot;&gt;http://www.linuxtv.org/wiki/index.php/Testing_your_DVB_device&lt;/a&gt;&lt;br /&gt; 我这里只管搜台。
+&lt;/p&gt;
+
+&lt;p&gt;
+  2）建立搜索频率表，这一步是关键！！
+&lt;/p&gt;
+
+&lt;p&gt;
+  先建个文件夹&lt;br /&gt; mkdir ~/.tzap
+&lt;/p&gt;
+
+&lt;p&gt;
+  搜台命令是&lt;br /&gt; scan /path_to_the_initial_scan_file &gt; ~/.tzap/channels.conf
+&lt;/p&gt;
+
+&lt;p&gt;
+  命令中path_to_the_initial_scan_file是指dvb-utils预制电视频道频率的列表。文件在/usr/share/dvb/dvb-t文件夹下。是按国家地区分的。可惜中国大陆一个都没有。没有我们就新建一个，内容例如：&lt;br /&gt; T 618000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; 其中第2项618000000表示信号所在频率。618000000就是618MHz。其他参数不清楚什么意思。不过其中倒数第2。4两个参数有可能是QAM64和1/4。这要看你当地信号的参数是什么了。&lt;br /&gt; 如果这个文件中只有这一条数据的话，搜索时，电视棒只会搜索这一个频率。如果你能得知你当地或附近城市DVBT电视信号的频率，那可以节省一些时间。如果&lt;br /&gt; 不知道，那只能用笨办法，一个一个频率搜索。（这里频率后的参数暂取8MHz 2/3 AUTO QAM16 8k 1/8&lt;br /&gt; NONE，如果你搜索不成功，可以改成8MHz 2/3 NONE QAM16 8k 1/4 NONE试试）
+&lt;/p&gt;
+
+&lt;p&gt;
+  DVBT电视信号一般的工作范围是从440MHz到700MHz，这里我就在新建文件里中加入如下信息：&lt;br /&gt; T 440000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; T 441000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; T 442000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; T 443000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE&lt;br /&gt; T 444000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE
+&lt;/p&gt;
+
+&lt;p&gt;
+  一直到
+&lt;/p&gt;
+
+&lt;p&gt;
+  T 700000000 8MHz 2/3 AUTO QAM16 8k 1/8 NONE
+&lt;/p&gt;
+
+&lt;p&gt;
+  之后将文件保存在/usr/share/dvb/dvb-t文件夹下。例如文件名为AAAAAAA（注意没有后缀名）
+&lt;/p&gt;
+
+&lt;p&gt;
+  3）搜台&lt;br /&gt; scan /usr/share/dvb/dvb-t/AAAAAAA &gt; ~/.tzap/channels.conf
+&lt;/p&gt;
+
+&lt;p&gt;
+  这样就会从440M一直搜到700M。这很花时间，你可以根据实际情况适当缩小范围。
+&lt;/p&gt;
+
+&lt;p&gt;
+  如果搜到了台，电视台的数据就保存在你的主目录.tzap下，名为channels.conf
+&lt;/p&gt;
+
+&lt;p&gt;
+  3。看电视&lt;br /&gt; 把这个文件拷贝到.mplayer下，用mplayer看电视&lt;br /&gt; $ cp channels.conf .mplayer&lt;br /&gt; 输入下面的命令就可以看数字电视了，用 h 和 l 换频道&lt;br /&gt; $ mplayer dvb://
+&lt;/p&gt;
+
+&lt;p&gt;
+  用过之后我感觉用mplayer看电视不是很方便，启动是必须用命令行，且没有节目单。这里我推荐Xine，使用方便。只要把channels.conf文件拷贝到.Xine文件夹下，点击DVB按钮就能看电视了，并且可以将电视节目录制下来，录制的格式为ts。
+&lt;/p&gt;
+
+&lt;p&gt;
+  下面是截图。
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;http://farm4.static.flickr.com/3521/3768256240_12ccb0fe8a.jpg&quot; border=&quot;0&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  另外试了一下电视棒带的遥控器。在用Xine观看时，按了一下遥控器系统直接崩了。所以我放弃了。如果有朋友继续研究遥控器的话欢迎补充阿。
+&lt;/p&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://peterz.xyz/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="FRP安装记录">FRP安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="Typora中文主题安装记录">Typora中文主题安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="VS Code 安装记录">VS Code 安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="基于Ubuntu搭建FTP文件服务器">基于Ubuntu搭建FTP文件服务器</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/" title="远程访问家里电脑文件的方法">远程访问家里电脑文件的方法</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/11/20/scrapy-shell%E5%90%AF%E5%8A%A8ipython/" title="Scrapy shell启动IPython">Scrapy shell启动IPython</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/" title="win10下安装splash">win10下安装splash</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/" title="在Scrapy使用splash爬取动态页面">在Scrapy使用splash爬取动态页面</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/" title="安装scrapy">安装scrapy</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/" title="将scrapy爬到的内容存入sqlite数据库">将scrapy爬到的内容存入sqlite数据库</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="http://peterz.xyz/categories/ubuntu/">ubuntu (7)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/">东拉西扯 (2)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%88%91%E7%9A%84/">我的 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%94%B6%E9%9B%86/">收集 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类 (127)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E7%88%AC%E8%99%AB/">爬虫 (4)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet/">计算机与 Internet (9)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%B4%B4%E8%B4%B4%E8%B4%B4/">贴贴贴 (1)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://peterz.xyz/tags/like/">like</a>
+    
+    <a href="http://peterz.xyz/tags/microsoft/">Microsoft</a>
+    
+    <a href="http://peterz.xyz/tags/system/">system</a>
+    
+    <a href="http://peterz.xyz/tags/technical/">technical</a>
+    
+    <a href="http://peterz.xyz/tags/windows/">Windows</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%8F%8C%E5%88%83%E5%89%91/">双刃剑</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%BE%AE%E9%80%9F%E6%91%84%E5%BD%B1/">微速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%85%A2%E9%80%9F%E6%91%84%E5%BD%B1/">慢速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%88%90%E5%8A%9F/">成功</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%96%87%E4%BB%B6%E5%A4%B9/">文件夹</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/">无线网卡</a>
+    
+    <a href="http://peterz.xyz/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%86%E9%A2%91/">视频</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">解决方法</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://peterz.xyz/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="http://peterz.xyz/">槑烎 By 槑烎</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+</body>
+
+</html>

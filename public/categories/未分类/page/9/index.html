@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>未分类 | 槑烎</title>
+    <meta property="og:title" content="未分类 - 槑烎">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="未分类">
+        
+    <meta name="author" content="槑烎">
+    <meta property="og:url" content="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml+xml" href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/index.xml" title="槑烎" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://peterz.xyz/">
+                        槑烎
+                    </a>
+                
+                <p class="description">1,2,∞</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="http://peterz.xyz/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <h3 class="archive-title">
+        分类
+        <span class="keyword">未分类</span>
+        中的文章
+    </h3>
+    
+
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/21/virtualbox%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A9%BA%E9%97%B4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">VirtualBox的数据空间使用方法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月21日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 2.进入虚拟机XP系统，右击我的电脑－》映射网络驱动器。选择vitualbox shared folders. &lt;/p&gt; &lt;p&gt; 3.添加完成之后，“共享数据空间”就成了一个网络驱动器。 &lt;/p&gt;  ……
+            <p class="readmore"><a href="http://peterz.xyz/2009/07/21/virtualbox%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A9%BA%E9%97%B4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/21/ubuntu%E4%B8%8B%E5%BC%80%E5%90%AFvirtualbox%E7%9A%84usb%E8%AE%BE%E5%A4%87%E6%94%AF%E6%8C%81/">Ubuntu下开启virtualbox的usb设备支持</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月21日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 安装好的virtualbox默认也不支持usb设备的，需要手工修改一些设置。 &lt;/p&gt; &lt;p&gt; 1.修改为usb设备增加普通用户权限&lt;br /&gt; 1.1 增加一个名为usbfs的用户组&lt;br /&gt; 代码:&lt;br /&gt; &lt;a href=&quot;mailto:YOURNAME@YOURNAME-laptop:~$&quot;&gt;YOURNAME@YOURNAME-laptop:~$&lt;/a&gt; sudo groupadd usbfs&lt;br /&gt; &lt;/p&gt; &lt;p&gt; 1.2 增加当前用户到工作组&lt;br /&gt; 代码:&lt;br /&gt; &lt;a href=&quot;mailto:YOURNAME@YOURNAME-laptop:~$&quot;&gt;YOURNAME@YOURNAME-laptop:~$&lt;/a&gt; sudo adduser YOURNAME usbfs //其中YOURNAME是本人系统的登录名字&lt;br /&gt; &lt;/p&gt; &lt;p&gt; 1.3 得到usbfs组的id&lt;br /&gt; 执行如下命令&lt;br /&gt; 代码:&lt;br /&gt; &lt;a href=&quot;mailto:YOURNAME@YOURNAME-laptop:~$&quot;&gt;YOURNAME@YOURNAME-laptop:~$&lt;/a&gt; cat /etc/group | grep usbfs&lt;br /&gt; usbfs:x:1002:YOURNAME,root &lt;/p&gt; &lt;p&gt; 其中1002就是usbfs组的id了。 &lt;/p&gt; &lt;p&gt; 1.4 修改 /etc/fstab 文件&lt;br /&gt; 代码:&lt;br /&gt; &lt;a href=&quot;mailto:YOURNAME@YOURNAME-laptop:~$&quot;&gt;YOURNAME@YOURNAME-laptop:~$&lt;/a&gt; sudo gedit /etc/fstab &lt;/p&gt; &lt;p&gt; 在文件的末尾增加一行&lt;br /&gt; 代码:&lt;br /&gt; none /proc/bus/usb usbfs devgid=1002,devmode=664 0 0 &lt;/p&gt; &lt;p&gt; 其中 devgid=1002，其中的1002就是刚才的usbfs的组id &lt;/p&gt; &lt;p&gt; 1.……
+            <p class="readmore"><a href="http://peterz.xyz/2009/07/21/ubuntu%E4%B8%8B%E5%BC%80%E5%90%AFvirtualbox%E7%9A%84usb%E8%AE%BE%E5%A4%87%E6%94%AF%E6%8C%81/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/21/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEtor/">Ubuntu下配置Tor</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月21日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 1。安装 privoxy： &lt;/p&gt; &lt;p&gt; sudo apt-get install tor privoxy &lt;/p&gt; &lt;p&gt; 2。安装Tor： &lt;/p&gt; &lt;p&gt; 由于9.04官方源中没有tor了，所以只能自行添加源 &lt;/p&gt; &lt;p&gt; deb &lt;a href=&quot;http://mirror.noreply.org/pub/tor&quot;&gt;http://mirror.noreply.org/pub/tor&lt;/a&gt; etch main&lt;br /&gt; deb-src &lt;a href=&quot;http://mirror.noreply.org/pub/tor&quot;&gt;http://mirror.noreply.org/pub/tor&lt;/a&gt; etch main &lt;/p&gt; &lt;p&gt; 更新：如果是9.04，可能还需要添加密钥： &lt;/p&gt; &lt;p&gt; gpg &amp;#8211;keyserver keys.gnupg.net &amp;#8211;recv 94C09C7F&lt;br /&gt; gpg &amp;#8211;export 94C09C7F | sudo apt-key add &amp;#8211; &lt;/p&gt; &lt;p&gt; 然后在终端执行 &lt;/p&gt; &lt;p&gt; sudo apt-get update&lt;br /&gt; sudo apt-get install tor &lt;/p&gt; &lt;p&gt; 即可完成tor安装 &lt;/p&gt; &lt;p&gt; 3。配置Tor： &lt;/p&gt; &lt;p&gt; 在终端执行 &lt;/p&gt; &lt;p&gt; sudo gedit /etc/privoxy/config &lt;/p&gt; &lt;p&gt; 在最前面加上下面这一行（别漏了那个不起眼的“.……
+            <p class="readmore"><a href="http://peterz.xyz/2009/07/21/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEtor/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/20/%E8%A7%A3%E5%86%B3ubuntu%E4%B8%8Bflash%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">解决ubuntu下flash中文乱码</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月20日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 完工。&lt;br /&gt;&lt;/span&gt;&lt;/div&gt; &lt;/div&gt; ……
+            <p class="readmore"><a href="http://peterz.xyz/2009/07/20/%E8%A7%A3%E5%86%B3ubuntu%E4%B8%8Bflash%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/18/ubuntu-%E4%B8%8B%E5%90%8C%E6%AD%A5evolution%E5%92%8Cgoogle%E6%97%A5%E5%8E%86/">Ubuntu 下同步Evolution和Google日历</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月18日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; 2.在终端中输入：&lt;font face=&quot;NSimsun&quot;&gt;/usr/lib/evolution-webcal/evolution-webcal YOUR_PRIVATE_ICAL_URL&lt;/font&gt;&lt;br /&gt; 3.设置同步时间 &lt;/p&gt; &lt;p&gt; 完工。 &lt;/p&gt; &lt;p&gt; &lt;/p&gt;  ……
+            <p class="readmore"><a href="http://peterz.xyz/2009/07/18/ubuntu-%E4%B8%8B%E5%90%8C%E6%AD%A5evolution%E5%92%8Cgoogle%E6%97%A5%E5%8E%86/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/09/ubuntu%E4%B8%8B%E6%B7%BB%E5%8A%A0%E5%BE%B7%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/">Ubuntu下添加德语输入法。</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月9日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            ……
+            <p class="readmore"><a href="http://peterz.xyz/2009/07/09/ubuntu%E4%B8%8B%E6%B7%BB%E5%8A%A0%E5%BE%B7%E8%AF%AD%E8%BE%93%E5%85%A5%E6%B3%95/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/07/09/ubuntu%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E6%89%80%E6%9C%89ntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E7%9A%84%E6%96%B9%E6%B3%95/">Ubuntu开机自动挂载所有ntfs硬盘分区的方法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年7月9日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            ……
+            <p class="readmore"><a href="http://peterz.xyz/2009/07/09/ubuntu%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E6%8C%82%E8%BD%BD%E6%89%80%E6%9C%89ntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA%E7%9A%84%E6%96%B9%E6%B3%95/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/06/15/vista%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E4%B8%8D%E8%83%BD%E5%90%AF%E5%8A%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">VISTA语音识别不能启动的解决方法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年6月15日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; &lt;img border=&quot;0&quot; src=&quot;http://farm4.static.flickr.com/3640/3629361154_026d05e9ec.jpg&quot; /&gt; &lt;/p&gt; &lt;p&gt; 解决方法很简单，安装一个vista语音识别修复工具就可以了。 &lt;/p&gt; &lt;p&gt; &lt;a href=&quot;http://files.getdropbox.com/u/1167529/Vista%E5%8F%91%E9%9F%B3%E5%BC%95%E6%93%8E%E4%BF%AE%E5%A4%8D.zip&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Vista发音引擎修复文件&lt;/a&gt; &lt;/p&gt; &lt;p&gt; 安装过程中会出现很多提示，不用管它，点击忽略，下一步，直到安装结束就可以了。 &lt;/p&gt;  ……
+            <p class="readmore"><a href="http://peterz.xyz/2009/06/15/vista%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E4%B8%8D%E8%83%BD%E5%90%AF%E5%8A%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/05/30/%E6%84%9F%E5%86%92%E4%BA%86%E5%A4%A7%E5%AE%B6%E5%A8%B1%E4%B9%90%E4%B8%80%E4%B8%8B%E5%95%A6/">感冒了，大家娱乐一下啦</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年5月30日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            ……
+            <p class="readmore"><a href="http://peterz.xyz/2009/05/30/%E6%84%9F%E5%86%92%E4%BA%86%E5%A4%A7%E5%AE%B6%E5%A8%B1%E4%B9%90%E4%B8%80%E4%B8%8B%E5%95%A6/">阅读全文</a></p>
+        </div>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2009/05/22/%E8%BD%AC%E5%B8%96%E5%8D%97%E8%88%AA%E5%8C%97%E9%97%A8%E4%BA%8B%E4%BB%B6-%E5%8D%97%E4%BA%AC%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E5%A4%A7%E5%AD%A6%E5%AD%A6%E7%94%9F/">【转帖】南航北门事件——南京航空航天大学学生与城管发生冲突</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年5月22日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a>
+            
+        </div>
+        
+        <div class="post-content">
+            &lt;p&gt; &lt;strong&gt;&lt;img border=&quot;0&quot; src=&quot;http://farm4.static.flickr.com/3339/3555351484_6949b85e55.jpg&quot; /&gt;&lt;/strong&gt; &lt;/p&gt; &lt;p&gt; &lt;strong&gt;&lt;img border=&quot;0&quot; src=&quot;http://farm4.static.flickr.com/3312/3555351630_95e8525cec.jpg&quot; /&gt;&lt;/strong&gt; &lt;/p&gt; &lt;p&gt; &lt;strong&gt;&lt;img border=&quot;0&quot; src=&quot;http://farm3.static.flickr.com/2467/3555351810_07b1ac591e.jpg&quot; /&gt;&lt;/strong&gt; &lt;/p&gt; &lt;p&gt; &lt;strong&gt;&lt;img border=&quot;0&quot; src=&quot;http://farm4.static.flickr.com/3617/3555352098_24ca1932bb.jpg&quot; /&gt;&lt;/strong&gt; &lt;/p&gt; &lt;p&gt; &lt;strong&gt;&lt;img border=&quot;0&quot; src=&quot;http://farm4.static.flickr.com/3353/3555352240_7bb2e29301.jpg&quot; /&gt;&lt;/strong&gt; &lt;/p&gt; &lt;p&gt; &lt;strong&gt;&lt;img border=&quot;0&quot; src=&quot;http://farm4.static.flickr.com/3342/3555352820_9ce82bcaeb.jpg&quot; /&gt;&lt;/strong&gt; &lt;/p&gt; &lt;p&gt; &lt;strong&gt;&lt;img border=&quot;0&quot; src=&quot;http://farm4.static.flickr.com/3605/3555352480_5956e4d85c.jpg&quot; /&gt;&lt;/strong&gt; &lt;/p&gt; &lt;p&gt; &lt;strong&gt;&lt;img border=&quot;0&quot; src=&quot;http://farm4.static.flickr.com/3662/3554543221_d2562cd251.jpg&quot; /&gt;&lt;br /&gt; &lt;font size=&quot;2&quot; face=&quot;微软雅黑&quot;&gt;过程：&lt;/font&gt;&lt;/strong&gt; &lt;font size=&quot;2&quot; face=&quot;微软雅黑&quot;&gt;&lt;/p&gt; &lt;p&gt; 据西祠胡同南航天下网友透露，18日下午6时许，20多名城管以及警察前往南航江宁校区，查没该校北门苏果超市附近的学生地摊。城管不仅抢走摆夜市地摊学生的东西，据称还&lt;strong&gt;打伤一些女生&lt;/strong&gt;进医院了。有消息说，被打伤女孩来自正德职业技术学院（1998年筹建的全日制民办普通高等学校,由南京航空航天大学校友会和南京江宁经济技术开发总公司投资,挂靠南京航空航天大学）。 &lt;/p&gt; &lt;p&gt; 据称城管动作很迅速，整个过程持续不到十分钟。 &lt;/p&gt; &lt;p&gt; 城管和110走后，摆摊的学生聚集在一起示威。7时许，在红绿灯处，往南航方向，一群人拦住了城管的面包车，还有一辆公交148。持续了10分钟左右，人越来越多，后面的车都走不了。示威学生后来把148车放了，就只拦了城管的车。学生和城管一直在口水战。 &lt;/p&gt; &lt;p&gt; 到了8点多，事情扩大了，南航学生要求城管放人，搞暴动了，警车和救护车也随即赶到。 &lt;/p&gt; &lt;p&gt; 晚上8点45时，事发地点已经聚集了上千名学生和群众，交通被迫中段。清安，105，148等多路公交车被迫绕道，或者停靠路边。学生还打出了“非暴力不合作 non-violent, non cooperation”的标语。据称甚至有人要掀翻现场的警车。 &lt;/p&gt; &lt;p&gt; 晚11时许，示威学生基本散去。 &lt;/p&gt; &lt;p&gt; 事件发生后，警方和南航校方迅速采取行动，封闭校门，只许进不许出，校内各级动员通知，严禁学生参与。有网友说：”话说 学校行动力真够强的。我在窗口眼睁睁的看着很多人冲下楼去 然后换鞋子出门到了北门时保安已经封门了 只准进不准出。。。国防院校真是不一般啊不一般“ &lt;/p&gt; &lt;p&gt; &lt;/font&gt;&lt;strong&gt;&lt;br /&gt; &lt;font size=&quot;2&quot; face=&quot;微软雅黑&quot;&gt;起因：&lt;br /&gt;&lt;/font&gt;&lt;/strong&gt;&lt;br /&gt; &lt;font size=&quot;2&quot; face=&quot;微软雅黑&quot;&gt;知情者透露，事发地点位于江宁将军大道附近，在华润苏果前的广场上，旁边就是小吃街。夜市上大都是一些南航学生以及附近正德学院的学生自己摆的小地摊，卖些夏天的小衣服，漂亮的首饰等，价格便宜公道，既没有占道经营，也不妨碍交通。&lt;br /&gt; &lt;/p&gt; &lt;p&gt; 而此次之所以城管采取行动，据称是因为南京文明城市创建成功后，近日将有一检查团要来进行复查，据说要到南航江宁对面的苏果超市，结果整治到了学生头上。&lt;/font&gt; &lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt; &lt;font face=&quot;微软雅黑&quot;&gt;据网友“Tata蜜”在西祠&lt;span&gt;论坛&lt;/span&gt;上说,“此事件发生在今晚22时27分，南京将军大道与胜泰路交叉路口，起因为城管暴力执法，抢夺大学生商贩的东西并且打人，据称还有大学生已被执法部门带走。城管已经不知所踪，愤怒的大学生堵住了路口并要求城管道歉归还物品并且放人。现在场面一片混乱，警察在尽力维持秩序。”&lt;/p&gt; &lt;p&gt; 另据“二次虚化”网友说“首先，城管打了在苏果摆摊的学生，然后学生以及长期摆摊的人堵住了苏果对面的南北路交通。后来交警过来，然后学生堵住东西路也就是胜太西路。打人的城管已经跑了，现在一个好像是领导的城管被学生和社会不明人士围住要求打人的城管出道歉。叫声大家应该都已经听到了，现场不明人士牌子都事先准备好了：貌似写的要保护弱势群体之类的。不管是不是借用学生的名义，大家很激动。现在&lt;span&gt;学校&lt;/span&gt;只进不出。” &lt;/p&gt; &lt;p&gt; 一位网友“117.……
+            <p class="readmore"><a href="http://peterz.xyz/2009/05/22/%E8%BD%AC%E5%B8%96%E5%8D%97%E8%88%AA%E5%8C%97%E9%97%A8%E4%BA%8B%E4%BB%B6-%E5%8D%97%E4%BA%AC%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E5%A4%A7%E5%AD%A6%E5%AD%A6%E7%94%9F/">阅读全文</a></p>
+        </div>
+    </article>
+    
+
+    
+
+
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/page/8/">上一页</a>
+    </li>
+    
+
+    
+
+    
+        
+        
+    
+    
+
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">1</a>
+        </li>
+        
+    
+        
+        <li>
+            <span>...</span>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/page/7/">7</a>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/page/8/">8</a>
+        </li>
+        
+    
+        
+        
+        <li  class="current">
+            <a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/page/9/">9</a>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/page/10/">10</a>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/page/11/">11</a>
+        </li>
+        
+    
+        
+        <li>
+            <span>...</span>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/page/13/">13</a>
+        </li>
+        
+    
+
+    
+    
+
+    <li class="next">
+        <a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/page/10/">下一页</a>
+    </li>
+    
+</ol>
+
+
+
+
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://peterz.xyz/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="FRP安装记录">FRP安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="Typora中文主题安装记录">Typora中文主题安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="VS Code 安装记录">VS Code 安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="基于Ubuntu搭建FTP文件服务器">基于Ubuntu搭建FTP文件服务器</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/" title="远程访问家里电脑文件的方法">远程访问家里电脑文件的方法</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/11/20/scrapy-shell%E5%90%AF%E5%8A%A8ipython/" title="Scrapy shell启动IPython">Scrapy shell启动IPython</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/" title="win10下安装splash">win10下安装splash</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/" title="在Scrapy使用splash爬取动态页面">在Scrapy使用splash爬取动态页面</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/" title="安装scrapy">安装scrapy</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/" title="将scrapy爬到的内容存入sqlite数据库">将scrapy爬到的内容存入sqlite数据库</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="http://peterz.xyz/categories/ubuntu/">ubuntu (7)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/">东拉西扯 (2)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%88%91%E7%9A%84/">我的 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%94%B6%E9%9B%86/">收集 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类 (127)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E7%88%AC%E8%99%AB/">爬虫 (4)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet/">计算机与 Internet (9)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%B4%B4%E8%B4%B4%E8%B4%B4/">贴贴贴 (1)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://peterz.xyz/tags/like/">like</a>
+    
+    <a href="http://peterz.xyz/tags/microsoft/">Microsoft</a>
+    
+    <a href="http://peterz.xyz/tags/system/">system</a>
+    
+    <a href="http://peterz.xyz/tags/technical/">technical</a>
+    
+    <a href="http://peterz.xyz/tags/windows/">Windows</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%8F%8C%E5%88%83%E5%89%91/">双刃剑</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%BE%AE%E9%80%9F%E6%91%84%E5%BD%B1/">微速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%85%A2%E9%80%9F%E6%91%84%E5%BD%B1/">慢速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%88%90%E5%8A%9F/">成功</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%96%87%E4%BB%B6%E5%A4%B9/">文件夹</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/">无线网卡</a>
+    
+    <a href="http://peterz.xyz/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%86%E9%A2%91/">视频</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">解决方法</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://peterz.xyz/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="http://peterz.xyz/">槑烎 By 槑烎</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+</body>
+
+</html>

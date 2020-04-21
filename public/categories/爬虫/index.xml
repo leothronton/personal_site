@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>爬虫 on 槑烎</title>
+    <link>http://peterz.xyz/categories/%E7%88%AC%E8%99%AB/</link>
+    <description>Recent content in 爬虫 on 槑烎</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Oct 2018 02:20:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://peterz.xyz/categories/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>win10下安装splash</title>
+      <link>http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/</link>
+      <pubDate>Tue, 30 Oct 2018 02:20:00 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/</guid>
+      <description>安装DOCKER Docker for windows 仅支持win10专业版，并且电脑需支持虚拟化技术。
+其他版本的需安装Docker Toolbox
+国内可以使用阿里云镜像来下载。
+下载完成之后直接点击安装。
+启动Docker 双击Docker QuickStart启动Docker Toolbox终端。
+启动后出现错误，卡在了Finalize这一步……
+打开安装目录下start.sh文件，将84行的clear注释掉（clear-&amp;gt;#clear)。再次启动Docker QuickStart。
+安装Splash 执行命令：
+$ docker pull scrapinghub/splash  启动Splash $ sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash  验证 在浏览器输入：192.168.100:8050
+显示splash页面</description>
+    </item>
+    
+    <item>
+      <title>在Scrapy使用splash爬取动态页面</title>
+      <link>http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/</link>
+      <pubDate>Wed, 24 Oct 2018 09:48:14 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/</guid>
+      <description>在windwos中启动Docker Quickstart Terminal后运行splash：
+docker run -p 8050:8050 -p 8051:8051 scrapinghub/splash  表示:Splash现在在端口8050（http）和5023（telnet）上的192.168.99.100处可用。
+启动后在浏览器中输入192.168.99.100：8050 验证是否启动成功。
+ 在scrapy项目文件settings.py中添加：
+SPLASH_URL = &#39;http://192.168.99.100:8050/&#39; # 开启Splash的两个下载中间件并调整HttpCompressionMiddleware的次序 DOWNLOADER_MIDDLEWARES = { &#39;scrapy_splash.SplashCookiesMiddleware&#39;: 723, &#39;scrapy_splash.SplashMiddleware&#39;: 725, &#39;scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware&#39;: 810, } # 设置去重过滤器 DUPEFILTER_CLASS = &#39;scrapy_splash.SplashAwareDupeFilter&#39; # 用来支持cache_args（可选） SPIDER_MIDDLEWARES = { &#39;scrapy_splash.SplashDeduplicateArgsMiddleware&#39;: 100, }  在爬虫文件pider.py中添加
+def start_requests(self): script = &#39;&#39;&#39; function main(splash) splash:set_viewport_size(1028, 10000) splash:go(splash.args.url) local scroll_to = splash:jsfunc(&amp;quot;window.scrollTo&amp;quot;) scroll_to(0, 2000) splash:wait(5) return {png=splash:png()} end &#39;&#39;&#39; for url in self.</description>
+    </item>
+    
+    <item>
+      <title>安装scrapy</title>
+      <link>http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/</link>
+      <pubDate>Wed, 24 Oct 2018 02:56:31 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/</guid>
+      <description>环境 winpython3.6 pip install scrapy  发现在安装依赖twisted时出错，需要vc++14.0. 网上搜索发现需要下载安装visual studio等，太麻烦了。于是乎google到了Twisted-18.7.0-cp36-cp36m-win_amd64.whl。
+pip install Twisted-18.7.0-cp36-cp36m-win_amd64  完成后继续
+pip install scrapy  安装成功后，验证：
+In[1]:import scrapy In[2]:scrapy.version_info Out[2]: (1, 5, 1)   </description>
+    </item>
+    
+    <item>
+      <title>将scrapy爬到的内容存入sqlite数据库</title>
+      <link>http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Mon, 22 Oct 2018 08:41:49 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>这个方法需要手动创建数据库文件并将表建立好，否则程序运行会出错。
+settings.py
+# sqlite 配置 SQLITE_DB_NAME = &#39;Data.db&#39; #数据库名称 SQLITE_TABLE_NAME = &#39;table&#39; #表名称 ITEM_PIPELINES={ &#39;dirName.pipelines.Sqlite3Pipeline&#39;: 400, }  pipelines.py
+import sqlite3 class Sqlite3Pipeline(object): def __init__(self, sqlite_file, sqlite_table): self.sqlite_file = sqlite_file self.sqlite_table = sqlite_table @classmethod def from_crawler(cls, crawler): return cls( sqlite_file = crawler.settings.get(&#39;SQLITE_DB_NAME&#39;), # 从 settings.py 提取 sqlite_table = crawler.settings.get(&#39;SQLITE_TABLE_NAME&#39;, &#39;items&#39;) ) def open_spider(self, spider): self.conn = sqlite3.connect(self.sqlite_file) self.cur = self.conn.cursor() def close_spider(self, spider): self.conn.close() def process_item(self, item, spider): values = ( item[&#39;A&#39;], item[&#39;B&#39;], item[&#39;C&#39;], item[&#39;D&#39;], item[&#39;E&#39;] ) sql = &#39;INSERT INTO proxy VALUES (?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,16 @@
+baseURL = "http://peterz.xyz/"
+languageCode = "en-us"
+title = "槑烎"
+theme = "maupassant"
+
+[author]
+  name = "槑烎"
+
+[params]
+  author = "槑烎"
+  subtitle = "1,2,∞"
+
+[markup]
+  [markup.highlight]
+    lineNos = true
+    style = "github"

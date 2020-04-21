@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>树莓派安装记录 | 槑烎</title>
+    <meta property="og:title" content="树莓派安装记录 - 槑烎">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2017-07-08T04:42:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2017-07-08T04:42:00&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="树莓派安装记录">
+        <meta name="author" content="leo_thronton">
+        
+    <meta property="og:url" content="http://peterz.xyz/2017/07/08/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://peterz.xyz/">
+                        槑烎
+                    </a>
+                
+                <p class="description">1,2,∞</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://peterz.xyz/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">树莓派安装记录</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2017年7月8日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <h3 id="1-">1. 下载镜像：</h3>
+<p>下载 <a href="http://downloads.raspberrypi.org/raspbian_latest.torrent">http://downloads.raspberrypi.org/raspbian_latest.torrent</a> 最新版的 BT 种子</p>
+<h5 id="2-win32-diskimagertf">2. 使用win32 diskimager回复镜像到TF卡：</h5>
+<p>官方下载地址：<a href="http://sourceforge.net/projects/win32diskimager/">http://sourceforge.net/projects/win32diskimager/</a></p>
+<h5 id="3-">3. 远程桌面：</h5>
+<p>在windows下访问树莓派需要xdrp服务： sudo apt-get install xrdp</p>
+<h5 id="4">4.首次运行系统需要扩展分区：</h5>
+<p>sudo raspi-config 选中第一个 1 Expand Filesystem 并按Enter确认，之后退出重启，这样才能用到存储卡的全部容量</p>
+<h5 id="5">5.更换国内源:</h5>
+<p>sudo nano /etc/apt/sources.list 测试最佳软件源：</p>
+<ul>
+<li>安装 netselect</li>
+</ul>
+<p>sudo apt-get install netselect</p>
+<ul>
+<li>git clone</li>
+</ul>
+<p>git clone <a href="https://github.com/sjqlwy/ccrm.git">https://github.com/sjqlwy/ccrm.git</a> cd ./ccrm</p>
+<ul>
+<li>运行</li>
+</ul>
+<p>sudo sh <a href="http://ccrm.sh">ccrm.sh</a> sudo apt-get update 测出连接速度最快的源之后，修改sources.list，（假设结果为阿里源） sudo nano /etc/apt/sources.list 加入： deb <a href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a>jessie main non-free contrib deb-src <a href="http://mirrors.aliyun.com/raspbian/raspbian/">http://mirrors.aliyun.com/raspbian/raspbian/</a> jessie main non-free contrib</p>
+<p>sudo apt-get update （如果仍然遇到连接问题，则进行以下操作） sudo nano /etc/apt/sources.list.d/raspi.list 在原来的内容前添加 # 号，注释掉原来的源 有时apt-get的key可能出问题，具体来说就算官方源也会报说来源未知 这时可以尝试运行： sudo apt-key update</p>
+<h5 id="6">6.本地化：</h5>
+<p>如果发现键盘输出有问题，则需要设置键盘：</p>
+<p>Menu -&gt; Preferences -&gt; Mouse and Keyboard Settings -&gt; Keyboard -&gt; Keyboard Layout -&gt; United States -&gt; English(US) -&gt; OK</p>
+<ul>
+<li>解决中文乱码：</li>
+</ul>
+<p>sudo raspi-config</p>
+<p>选择</p>
+<p>5 Internationalisation Options</p>
+<ul>
+<li>中文支持:</li>
+</ul>
+<p>I1 Change Locale</p>
+<p>方向键移动至列表末尾，用空格键选中以下项：</p>
+<p>[*] zh_CN.UTF-8 UTF-8</p>
+<p>之后按TAB键移动至 Ok, 接下来会选择系统默认显示语言，按个人需求选择</p>
+<ul>
+<li>修改时区：</li>
+</ul>
+<p>I2 Change Timezone</p>
+<p>进入后依次找到选中 Asia，城市选择 Shanghai</p>
+<ul>
+<li>中文字体：</li>
+</ul>
+<p>新版系统（2016-05-27）似乎需要安装中文字体</p>
+<p>sudo apt-get install fonts-wqy-zenhei</p>
+<ul>
+<li>安装输入法（Fcitx，拼音）：</li>
+</ul>
+<p>sudo apt-get install fcitx fcitx-pinyin</p>
+<p>设置：</p>
+<p>Menu -&gt; Run</p>
+<p>输入：</p>
+<p>im-config</p>
+<p>选中 fcitx</p>
+<p>可能会问是否改变系统设置，选择改动</p>
+<p>重启后可测试输入法，在文本编辑器或浏览器内，按 Ctrl + 空格键 切换至拼音，按 Shift可在中英文输入间切换。</p>
+<h5 id="7">7.自动挂载硬盘</h5>
+<p>将移动硬盘接到USB口后先格式化硬盘位ext4格式：</p>
+<ol>
+<li>先查看挂载情况</li>
+</ol>
+<pre><code>sudo fdisk -l
+
+  * 格式化硬盘
+    
+    sudo mkfs.ext4 /dev/sdb
+    
+      * 新建文件夹作为移动硬盘的挂载点
+        
+        sudo mkdir /home/pi/USB_Disk1
+        
+          * 修改文件夹权限为任何人可读写
+            
+            sudo chmod o+rwx /home/pi/USB_Disk1
+            
+              * 查看硬盘的UUID
+                
+                sudo blkid
+                
+                  * 将硬盘信息添加到fstab
+                    
+                    sudo nano /etc/fstab
+                    
+                    将以下下信息添加到fstab中
+                    
+                    UUID=&amp;#8221;69f58d5a-4fd2-4f4e-a97a-a89dda735199&amp;#8243; /home/pi/USB_Disk1 ext4 defaults 0 0&lt;/ol&gt; 
+                
+                保存后重启即可完成移动硬盘自动挂载
+                
+                ##### 8.安装Samba文件共享:
+                
+                sudo apt-get install samba samba-common-bin sudo nano /etc/samba/smb.conf 找到 ############ Misc ############ 添加（可以提升文件传输速度，有线连接情况下约10MB/s）: socket options = TCP\_NODELAY IPTOS\_LOWDELAY SO\_RCVBUF=65536 SO\_SNDBUF=65536
+                
+                找到======================= Share Definitions ======================= 把read only = yes
+                
+                改为read only = no
+                
+                添加用户pi并设置密码 sudo smbpasswd -a pi 重启: sudo service samba reload Windows上（win10）: 此电脑 &gt; 映射网络驱动器 &gt; 输入 raspberrypipi
+                
+                ##### 9.NAS服务器
+                
+                sudo apt-get update&amp;&amp;sudo apt-get install ntfs-3g samba samba-common-bin hdparm
+                
+                sudo nano /etc/samba/smb.conf
+                
+                添加:
+                
+                [share]
+                
+                comment = Public Storage
+                
+                path = /mnt/usbdisk
+                
+                valid users = root pi
+                
+                browseable = yes
+                
+                public = yes
+                
+                read only = no
+                
+                sudo mkdir /mnt/usbdisk sudo nano /etc/fstab 添加:
+                
+                /dev/sda1 /mnt/usbdisk ntfs-3g defaults 0 0
+                
+                硬盘休眠（10分钟无操作休眠，计算方法：120*5=600）： sudo nano /etc/hdparm.conf 添加:
+                
+                /dev/sda {
+                
+                write_cache = on
+                
+                spindown_time = 120
+                
+                }
+                
+                sudo service hdparm restart 如果想提升速度可以参考这篇帖子，版权归属原作者Obihoernchen 比如先修改smb.conf： sudo nano /etc/samba/smb.conf 在Misc部分加入：
+                
+                write cache size = 2097152
+                
+                use sendfile = yes
+                
+                保存退出，之后修改fstab： sudo nano /etc/fstab 比如之前内容为： /dev/sda1 /mnt/usbdisk ntfs-3g defaults,noatime 0 0 修改为： /dev/sda1 /mnt/usbdisk ntfs-3g defaults,noatime,big_writes 0 0 修改之后保存退出，测试通过Samba向挂载的NTFS格式分区复制文件，速度从小于3MB/s-&gt;9MB/s 如果需要下载服务，可以参照这篇[文章][2]安装配置aria2
+                
+                ##### 10. 安装Resilio-sync
+                
+                根据官方教程，在树莓派上面安装 resilio-sync 套件，只需三步：
+                
+                  * 添加库
+                    
+                      * 添加用于套件验证的PGP公钥
+                        
+                          * 安装套件&lt;/ul&gt; 
+                        
+                        由于树莓派的 Raspbian 系统基于 Debian ，所以我们要按照下面的教程安装：
+                        
+                          1. 添加库
+                            
+                            创建文件 /etc/apt/sources.list.d/resilio-sync.list 并写入下面的内容以注册 Resilio 套件库：
+                        
+                        deb &lt;http://linux-packages.resilio.com/resilio-sync/deb&gt; resilio-sync non-free
+                        
+                          1. 添加公钥
+                            
+                            使用下面的命令添加公钥：
+                        
+                        wget -qO &amp;#8211; &lt;https://linux-packages.resilio.com/resilio-sync/key.asc&gt; | sudo apt-key add &amp;#8211;
+                        
+                          1. 对于树莓派2和3（ arm64 架构） 还要运行下面的命令
+                        
+                        sudo dpkg –add-architecture armhf sudo apt-get update
+                        
+                          1. 然后将 /etc/apt/sources.list 中的内容修改为
+                            
+                            deb [arch=armhf] &lt;http://linux-packages.resilio.com/resilio-sync/deb&gt; resilio-sync non-free
+                            
+                            对于树莓派1则运行下面的命令
+                        
+                        sudo dpkg &amp;#8211;add-architecture armel
+                        
+                          1. 安装 resilio-sync 套件
+                        
+                        sudo apt-get update
+                        
+                        sudo apt-get install resilio-sync
+                        
+                        对于树莓派1则运行
+                        
+                        sudo apt-get update
+                        
+                        sudo apt-get install resilio-sync:armel
+                        
+                          1. 安装完成后，使用下面的命令删除旧版 btsync（可选）
+                        
+                        sudo apt-get purge btsync
+                        
+                          1. 使用
+                            
+                            使用 IP 加端口号即可进入管理页面，默认端口号为 8888，例如访问 127.0.0.1:8888，第一次使用需要创建用户名和密码（请务必牢记），其他设置和桌面版类似，包括免费使用PRO的方法。
+                            
+                              * 备注
+                                
+                                使用上面的方法安装完 Sync 之后，再次运行 sudo apt-get update 会提示下面的警告信息：&lt;/ol&gt; 
+                            
+                            W: Duplicate sources.list entry &lt;http://linux-packages.resilio.com/resilio-sync/deb/&gt; resilio-sync/non-free armhf Packages (/var/lib/apt/lists/linux-packages.resilio.com\_resilio-sync\_deb\_dists\_resilio-sync\_non-free\_binary-armhf_Packages)
+                            
+                            W: You may want to run apt-get update to correct these problems
+                            
+                            解决方法是删除第一步里面创建的这个这个文件 /etc/apt/sources.list.d/resilio-sync.list。
+                            
+                            ##### 11.minidlna
+                            
+                              1. 安装minidlna
+                                
+                                sudo apt-get install minidlna
+                                
+                                  * 设置配置文件
+                                    
+                                    设置/etc/minidlna.conf文件，在文件尾部添加如下内容：
+                                    
+                                    media\_dir=A,/home/pi/USB\_Disk2/shareDir/Music
+                                    
+                                    media\_dir=P,/home/pi/USB\_Disk2/shareDir/Picture
+                                    
+                                    media\_dir=V,/home/pi/USB\_Disk2/shareDir/Video
+                                    
+                                    A表示这个目录是存放音乐的，当minidlna读到配置文件时，它会自动加载这个目录下的音乐文件
+                                    
+                                    配置minidlna的数库数据的存放目录
+                                    
+                                    db\_dir=/home/pi/USB\_Disk2/shareDir/db
+                                    
+                                    配置日志目录
+                                    
+                                    log\_dir=/home/pi/USB\_Disk2/shareDir/log
+                                    
+                                    以上配置中，/samba/DLNA/* 这个目录可以自定义，一定要确保目录存在且设置权限为可读写。例子中的是已经配置好的 Samba 所在的目录，这样可以把 DLNA 目录共享在局域网之中，更方便的管理媒体文件。树莓派实验室之前有介绍过在树莓派上安装Samba的方法。
+                                    
+                                      * 重启 minidlna
+                                        
+                                        sudo /etc/init.d/minidlna restart
+                                        
+                                          * 测试 sudo /etc/init.d/minidlna status 返回 [ok] minidlna is running 为正常。
+                                            
+                                            这个时候就可以通过平板电视、电脑、手机来发现“媒体设备”播放DLNA目录下的媒体资源了。 DLNA 支持的媒体格式： Image:JPEG PNG, GIF, TIFF Audio:LPCM AAC, AC-3, ATRAC 3plus, MP3, WMA9 Video:AVI MPEG2 MPEG-1,MPEG-4*, AVC, WMV9&lt;/ol&gt; 
+                                        
+                                        ###### minidlna 使用技巧
+                                        
+                                          1. 查看资源个数 [http://树莓派的IP地址:8200/][3]
+                                            
+                                              * 让 minidlna 随机启动 sudo update-rc.d minidlna defaults
+                                                
+                                                  * 启动 minidlna 服务 sudo service minidlna start
+                                                    
+                                                      * 当你修改配置文件及媒体资源更新时，需要强制刷新，以便minidlna将最新的媒体文件进行索引 sudo service minidlna force-reload
+                                                        
+                                                          * 取消 minidlna 的开机自动启动 sudo update-rc.d -f minidlna remove
+                                                            
+                                                              * 停止 minidlna 服务 sudo service minidlna stop
+                                                                
+                                                                  * 停止 minidlna 所有进程 sudo killall minidlna
+                                                                    
+                                                                      * 卸载 minidlna sudo apt-get remove &amp;#8211;purge minidlna&lt;/ol&gt;
+</code></pre>
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://peterz.xyz/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="FRP安装记录">FRP安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="Typora中文主题安装记录">Typora中文主题安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="VS Code 安装记录">VS Code 安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="基于Ubuntu搭建FTP文件服务器">基于Ubuntu搭建FTP文件服务器</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/" title="远程访问家里电脑文件的方法">远程访问家里电脑文件的方法</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/11/20/scrapy-shell%E5%90%AF%E5%8A%A8ipython/" title="Scrapy shell启动IPython">Scrapy shell启动IPython</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/" title="win10下安装splash">win10下安装splash</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/" title="在Scrapy使用splash爬取动态页面">在Scrapy使用splash爬取动态页面</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/" title="安装scrapy">安装scrapy</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/" title="将scrapy爬到的内容存入sqlite数据库">将scrapy爬到的内容存入sqlite数据库</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="http://peterz.xyz/categories/ubuntu/">ubuntu (7)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/">东拉西扯 (2)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%88%91%E7%9A%84/">我的 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%94%B6%E9%9B%86/">收集 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类 (127)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E7%88%AC%E8%99%AB/">爬虫 (4)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet/">计算机与 Internet (9)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%B4%B4%E8%B4%B4%E8%B4%B4/">贴贴贴 (1)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://peterz.xyz/tags/like/">like</a>
+    
+    <a href="http://peterz.xyz/tags/microsoft/">Microsoft</a>
+    
+    <a href="http://peterz.xyz/tags/system/">system</a>
+    
+    <a href="http://peterz.xyz/tags/technical/">technical</a>
+    
+    <a href="http://peterz.xyz/tags/windows/">Windows</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%8F%8C%E5%88%83%E5%89%91/">双刃剑</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%BE%AE%E9%80%9F%E6%91%84%E5%BD%B1/">微速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%85%A2%E9%80%9F%E6%91%84%E5%BD%B1/">慢速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%88%90%E5%8A%9F/">成功</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%96%87%E4%BB%B6%E5%A4%B9/">文件夹</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/">无线网卡</a>
+    
+    <a href="http://peterz.xyz/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%86%E9%A2%91/">视频</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">解决方法</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://peterz.xyz/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="http://peterz.xyz/">槑烎 By 槑烎</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+</body>
+
+</html>

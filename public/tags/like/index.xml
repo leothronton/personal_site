@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>like on 槑烎</title>
+    <link>http://peterz.xyz/tags/like/</link>
+    <description>Recent content in like on 槑烎</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Nov 2011 20:39:55 +0000</lastBuildDate>
+    
+	<atom:link href="http://peterz.xyz/tags/like/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>64位matlab mex64位编译器解决方案</title>
+      <link>http://peterz.xyz/2011/11/16/64%E4%BD%8Dmatlab-mex64%E4%BD%8D%E7%BC%96%E8%AF%91%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Wed, 16 Nov 2011 20:39:55 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2011/11/16/64%E4%BD%8Dmatlab-mex64%E4%BD%8D%E7%BC%96%E8%AF%91%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>&amp;lt;p&amp;gt; The support for Microsoft Visual Studio 2008 Express Edition to create MEX files has been added in MATLAB 7.7 (R2008b). On 64-bit Windows, Visual Studio 2008 Express Edition support requires you to install some optional components as detailed below. Note that in some cases, the configuration steps described below are known to work with MATLAB 7.8 (R2009a), MATLAB 7.9 (R2009b) and MATLAB 7.10 (R2010a) as well. &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; When using 64-bit MATLAB on 64-bit Windows, you must use a 64-bit compiler to build MEX-files, MATLAB Compiler &amp;amp; Builder components, Simulink S-functions, RTW models, etc.</description>
+    </item>
+    
+  </channel>
+</rss>

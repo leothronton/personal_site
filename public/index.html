@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.62.1" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>槑烎 | 1,2,∞</title>
+    <meta property="og:title" content="槑烎 | 1,2,∞">
+    <meta property="og:type" content="website">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta property="og:url" content="http://peterz.xyz/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml+xml" href="http://peterz.xyz/index.xml" title="槑烎" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <h1>
+                        <a id="logo" href="http://peterz.xyz/">
+                            槑烎
+                        </a>
+                    </h1>
+                
+                <p class="description">1,2,∞</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://peterz.xyz/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="FRP安装记录">FRP安装记录</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年1月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet'>计算机与 Internet</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            目标：穿透内网，使用远程桌面控制内网计算机 所需设备：  被控电脑 公网IP 服务器  安装FRPS 下载安装Docker版FRPS 公司网络有公网ip，我的群晖NAS放在公司里。在NAS上安装docker版的frps。具体步骤如下：
+ 点击docker注册表 搜索frp 下载oldiy/frps  配置FRPS 路由器端口转发 配置路由器端口转发，将路由器的端口映射到对应的NAS端口上。
+需要将路由器端口映射到NAS上，例如将路由器的8000端口转发到NAS的7000端口上。
+整个映射关系如下表所示：
+&lt;th style=&quot;text-align:center;&quot;&gt; 路由器 &lt;/th&gt; &lt;th style=&quot;text-align:center;&quot;&gt; NAS &lt;/th&gt; &lt;th style=&quot;text-align:center;&quot;&gt; 容器 &lt;/th&gt;  &lt;td style=&quot;text-align:center;&quot;&gt; 8000 &lt;/td&gt; &lt;td style=&quot;text-align:center;&quot;&gt; 7000 &lt;/td&gt; &lt;td style=&quot;text-align:center;&quot;&gt; 7000 &lt;/td&gt;  &lt;td style=&quot;text-align:center;&quot;&gt; 8000 &lt;/td&gt; &lt;td style=&quot;text-align:center;&quot;&gt; 7000 &lt;/td&gt; &lt;td style=&quot;text-align:center;&quot;&gt; 7000 &lt;/td&gt;  如果需要用到其他端口，也需要建立从路由器→NAS→容器的映射关系。
+FRPS配置文件 在群晖NAS上安装frps服务端。配置文件如下：
+[common] bind_port = 7000 bind_udp_port = 7001 dashboard_port = 7500 dashboard_user = ****** dashboard_pwd = ****** token = *****  将文件保存到frps.……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="Typora中文主题安装记录">Typora中文主题安装记录</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年5月6日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet'>计算机与 Internet</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            在Typora默认的主题中，中文都是以宋体显示的。比较丑。在官方的在线主题中有Han和Catfish两个主题对中文的支持较好。
+安装主题  点击File→Preference→Get Themes 下载Han和Catfish两个主题。Han下载后只有一个css文件。Catfish是一个压缩包。 点击File→Preference→Open Theme Folder 将han.css和Catfish-master下的所有文件拷贝到themes文件夹中。打开catfish文件夹，选中所有ttc和otf结尾的字体文件后右键安装。 重启Typora完成。   ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="VS Code 安装记录">VS Code 安装记录</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年5月5日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet'>计算机与 Internet</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            VScode项目结构简介 VScode使用的是文件夹命名项目，需要新建一个文件夹作为你的项目，这个文件夹下放你的源文件，如果需要运行，还需要在这个文件夹下新建.vscode文件夹，在.vscode文件夹下配置这个项目如何运行。
+下面是一个典型的项目结构：
+├─项目名
+│ │ 源文件1
+│ │ 源文件2
+│ │ ……
+│ │ 源文件n
+│ │
+│ └─.vscode
+│ tasks.json
+│ settings.json
+安装Python插件  首先在本机上安装python。 打开vs code，在扩展商店中搜索python并安装。 选择python解释器：Ctrl+Shit+P打开命令行，输入Python: Select Interpreter，选择需要使用的python解释器。  关闭右侧导航栏  设置里面搜索 “editor.minimap.enabled”: 设置为false即可   ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="基于Ubuntu搭建FTP文件服务器">基于Ubuntu搭建FTP文件服务器</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年4月9日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet'>计算机与 Internet</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            安装并启动 FTP 服务 安装 VSFTPD
+使用 apt-get 安装 [vsftpd]：
+sudo apt-get install vsftpd -y  vsftpd 是在 Linux 上被广泛使用的 FTP 服务器，根据其官网介绍，它可能是 UNIX-like 系统下最安全和快速的 FTP 服务器软件。
+启动 VSFTPD
+安装完成后 VSFTPD 会自动启动，通过 netstat 命令可以看到系统已经[监听了 21 端口]：
+sudo netstat -nltp | grep 21  如果没有启动，可以手动开启 VSFTPD 服务：
+sudo systemctl start vsftpd.service  FTP 协议默认使用 21 端口作为服务端口
+配置用户访问目录 新建用户主目录
+sudo mkdir /home/uftp  执行完后，在这里 /home/uftp [?] 就能看到新建的文件夹 uftp 了。
+创建登录欢迎文件 [?]：
+sudo touch /home/uftp/welcome.……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/" title="远程访问家里电脑文件的方法">远程访问家里电脑文件的方法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年3月5日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet'>计算机与 Internet</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+             ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2018/11/20/scrapy-shell%E5%90%AF%E5%8A%A8ipython/" title="Scrapy shell启动IPython">Scrapy shell启动IPython</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年11月20日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            在python-3.6.6.amd64Libsite-packagesscrapytemplatesproject文件夹下
+打开scrapy.cfg
+在[settings]中添加
+shell = ipython
+done!……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2018/11/20/scrapy-shell%E5%90%AF%E5%8A%A8ipython/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/" title="win10下安装splash">win10下安装splash</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年10月30日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E7%88%AC%E8%99%AB'>爬虫</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            安装DOCKER Docker for windows 仅支持win10专业版，并且电脑需支持虚拟化技术。
+其他版本的需安装Docker Toolbox
+国内可以使用阿里云镜像来下载。
+下载完成之后直接点击安装。
+启动Docker 双击Docker QuickStart启动Docker Toolbox终端。
+启动后出现错误，卡在了Finalize这一步……
+打开安装目录下start.sh文件，将84行的clear注释掉（clear-&gt;#clear)。再次启动Docker QuickStart。
+安装Splash 执行命令：
+$ docker pull scrapinghub/splash  启动Splash $ sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash  验证 在浏览器输入：192.168.100:8050
+显示splash页面……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/" title="在Scrapy使用splash爬取动态页面">在Scrapy使用splash爬取动态页面</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年10月24日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E7%88%AC%E8%99%AB'>爬虫</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            在windwos中启动Docker Quickstart Terminal后运行splash：
+docker run -p 8050:8050 -p 8051:8051 scrapinghub/splash  表示:Splash现在在端口8050（http）和5023（telnet）上的192.168.99.100处可用。
+启动后在浏览器中输入192.168.99.100：8050 验证是否启动成功。
+ 在scrapy项目文件settings.py中添加：
+SPLASH_URL = 'http://192.168.99.100:8050/' # 开启Splash的两个下载中间件并调整HttpCompressionMiddleware的次序 DOWNLOADER_MIDDLEWARES = { 'scrapy_splash.SplashCookiesMiddleware': 723, 'scrapy_splash.SplashMiddleware': 725, 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, } # 设置去重过滤器 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter' # 用来支持cache_args（可选） SPIDER_MIDDLEWARES = { 'scrapy_splash.SplashDeduplicateArgsMiddleware': 100, }  在爬虫文件pider.py中添加
+def start_requests(self): script = ''' function main(splash) splash:set_viewport_size(1028, 10000) splash:go(splash.args.url) local scroll_to = splash:jsfunc(&quot;window.scrollTo&quot;) scroll_to(0, 2000) splash:wait(5) return {png=splash:png()} end ''' for url in self.……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/" title="安装scrapy">安装scrapy</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年10月24日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E7%88%AC%E8%99%AB'>爬虫</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            环境 winpython3.6 pip install scrapy  发现在安装依赖twisted时出错，需要vc++14.0. 网上搜索发现需要下载安装visual studio等，太麻烦了。于是乎google到了Twisted-18.7.0-cp36-cp36m-win_amd64.whl。
+pip install Twisted-18.7.0-cp36-cp36m-win_amd64  完成后继续
+pip install scrapy  安装成功后，验证：
+In[1]:import scrapy In[2]:scrapy.version_info Out[2]: (1, 5, 1)   ……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/" title="将scrapy爬到的内容存入sqlite数据库">将scrapy爬到的内容存入sqlite数据库</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年10月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E7%88%AC%E8%99%AB'>爬虫</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            这个方法需要手动创建数据库文件并将表建立好，否则程序运行会出错。
+settings.py
+# sqlite 配置 SQLITE_DB_NAME = 'Data.db' #数据库名称 SQLITE_TABLE_NAME = 'table' #表名称 ITEM_PIPELINES={ 'dirName.pipelines.Sqlite3Pipeline': 400, }  pipelines.py
+import sqlite3 class Sqlite3Pipeline(object): def __init__(self, sqlite_file, sqlite_table): self.sqlite_file = sqlite_file self.sqlite_table = sqlite_table @classmethod def from_crawler(cls, crawler): return cls( sqlite_file = crawler.settings.get('SQLITE_DB_NAME'), # 从 settings.py 提取 sqlite_table = crawler.settings.get('SQLITE_TABLE_NAME', 'items') ) def open_spider(self, spider): self.conn = sqlite3.connect(self.sqlite_file) self.cur = self.conn.cursor() def close_spider(self, spider): self.conn.close() def process_item(self, item, spider): values = ( item['A'], item['B'], item['C'], item['D'], item['E'] ) sql = 'INSERT INTO proxy VALUES (?……
+        </div>
+        <p class="readmore"><a href="http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/">阅读全文</a></p>
+    </article>
+    
+    
+
+
+
+<ol class="page-navigator">
+    
+
+    
+
+    
+        
+    
+    
+
+    
+        
+        
+        <li  class="current">
+            <a href="http://peterz.xyz/">1</a>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/page/2/">2</a>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/page/3/">3</a>
+        </li>
+        
+    
+        
+        <li>
+            <span>...</span>
+        </li>
+        
+    
+        
+        
+        <li >
+            <a href="http://peterz.xyz/page/16/">16</a>
+        </li>
+        
+    
+
+    
+    
+
+    <li class="next">
+        <a href="http://peterz.xyz/page/2/">下一页</a>
+    </li>
+    
+</ol>
+
+
+
+
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://peterz.xyz/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="FRP安装记录">FRP安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="Typora中文主题安装记录">Typora中文主题安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="VS Code 安装记录">VS Code 安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="基于Ubuntu搭建FTP文件服务器">基于Ubuntu搭建FTP文件服务器</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/" title="远程访问家里电脑文件的方法">远程访问家里电脑文件的方法</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/11/20/scrapy-shell%E5%90%AF%E5%8A%A8ipython/" title="Scrapy shell启动IPython">Scrapy shell启动IPython</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/" title="win10下安装splash">win10下安装splash</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/" title="在Scrapy使用splash爬取动态页面">在Scrapy使用splash爬取动态页面</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/" title="安装scrapy">安装scrapy</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/" title="将scrapy爬到的内容存入sqlite数据库">将scrapy爬到的内容存入sqlite数据库</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="http://peterz.xyz/categories/ubuntu/">ubuntu (7)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/">东拉西扯 (2)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%88%91%E7%9A%84/">我的 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%94%B6%E9%9B%86/">收集 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类 (127)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E7%88%AC%E8%99%AB/">爬虫 (4)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet/">计算机与 Internet (9)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%B4%B4%E8%B4%B4%E8%B4%B4/">贴贴贴 (1)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://peterz.xyz/tags/like/">like</a>
+    
+    <a href="http://peterz.xyz/tags/microsoft/">Microsoft</a>
+    
+    <a href="http://peterz.xyz/tags/system/">system</a>
+    
+    <a href="http://peterz.xyz/tags/technical/">technical</a>
+    
+    <a href="http://peterz.xyz/tags/windows/">Windows</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%8F%8C%E5%88%83%E5%89%91/">双刃剑</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%BE%AE%E9%80%9F%E6%91%84%E5%BD%B1/">微速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%85%A2%E9%80%9F%E6%91%84%E5%BD%B1/">慢速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%88%90%E5%8A%9F/">成功</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%96%87%E4%BB%B6%E5%A4%B9/">文件夹</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/">无线网卡</a>
+    
+    <a href="http://peterz.xyz/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%86%E9%A2%91/">视频</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">解决方法</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://peterz.xyz/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="http://peterz.xyz/">槑烎 By 槑烎</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>贴贴贴 on 槑烎</title>
+    <link>http://peterz.xyz/categories/%E8%B4%B4%E8%B4%B4%E8%B4%B4/</link>
+    <description>Recent content in 贴贴贴 on 槑烎</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 May 2009 17:45:12 +0000</lastBuildDate>
+    
+	<atom:link href="http://peterz.xyz/categories/%E8%B4%B4%E8%B4%B4%E8%B4%B4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转帖]PPC WM5系统下VPN设置方法</title>
+      <link>http://peterz.xyz/2009/05/18/%E8%BD%AC%E5%B8%96ppc-wm5%E7%B3%BB%E7%BB%9F%E4%B8%8Bvpn%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 18 May 2009 17:45:12 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2009/05/18/%E8%BD%AC%E5%B8%96ppc-wm5%E7%B3%BB%E7%BB%9F%E4%B8%8Bvpn%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95/</guid>
+      <description>&amp;lt;p&amp;gt; &amp;lt;font color=&amp;quot;#800000&amp;quot;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;strong&amp;gt;1&amp;lt;/strong&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;strong&amp;gt;&amp;lt;span&amp;gt;. 在公司內部的工作設定網路&amp;lt;/span&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;/font&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 假如您在台北的辦公大樓上班，您的辦公桌在 8 樓，這個時候您到 5 樓會議室開會，這個時候，剛好發現您的 Pocket PC 少了一個 PowerPoint 簡報檔，除了坐電梯回到 8 樓的電腦旁重傳檔案，該怎麼辦呢？ &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 一個比較方便的方法，就是用 Pocket PC 連到公司內部的基地台，因為通常公司每台電腦都是透過內部的網路互通的，不會有防火牆的限制，所以您就可以直接連線到您辦公桌上的電腦，透過網路芳鄰抓取檔案。這個連線通常是「工作設定的連線」，因為，這個 WiFi 基地台在您的公司而非飯店或車站裡。 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 要設定工作連線，在開始 &amp;gt; 設定 &amp;gt; 連線 &amp;gt; 網路卡中，指定基地台的「連線到」改成「工作設定」。當然，您要開啟 WiFi 功能才會看到搜尋基地台的畫面。 &amp;lt;/p&amp;gt; &amp;lt;p align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;http://attach1.mobile01.com/attach/200602/mobile01-771c9da59ee9aa33a3842bbf095664b9.png&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener noreferrer&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;http://farm4.static.flickr.com/3409/3543474382_a6bc9b4f91.jpg&amp;quot; border=&amp;quot;0&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt; ▲ 在開始 &amp;gt; 設定 &amp;gt; 連線 &amp;gt; 網路卡中，點選公司的基地台 (Taipei) &amp;lt;/p&amp;gt; &amp;lt;p align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;http://attach1.mobile01.com/attach/200602/mobile01-816a505fe486af0b068efe57c02390df.png&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener noreferrer&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;http://farm4.static.flickr.com/3630/3542665759_ab258e96e7.jpg&amp;quot; border=&amp;quot;0&amp;quot; /&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt; ▲ 將「連線到:」欄位改成「預設的工作設定」 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 這樣一來，您在就可以直接存取網路芳鄰的資源，或在瀏覽器中輸入 &amp;lt;a href=&amp;quot;http://taipei/&amp;quot; target=&amp;quot;_blank&amp;quot; rel=&amp;quot;noopener noreferrer&amp;quot;&amp;gt;http://taipei/&amp;lt;/a&amp;gt; 的內部網站，也不需要建立 VPN 連線 (因為您已經在公司網域中了)。假如您是直接建立工作連線，您可以直接跳過下一節 VPN 設定，直接閱讀用檔案總管存取網路芳鄰 檔案的方法。 &amp;lt;/p&amp;gt; &amp;lt;p align=&amp;quot;center&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;http://attach1.</description>
+    </item>
+    
+  </channel>
+</rss>

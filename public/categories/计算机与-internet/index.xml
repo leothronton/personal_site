@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机与 Internet on 槑烎</title>
+    <link>http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet/</link>
+    <description>Recent content in 计算机与 Internet on 槑烎</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Jan 2020 02:01:42 +0000</lastBuildDate>
+    
+	<atom:link href="http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FRP安装记录</title>
+      <link>http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 21 Jan 2020 02:01:42 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <description>目标：穿透内网，使用远程桌面控制内网计算机 所需设备：  被控电脑 公网IP 服务器  安装FRPS 下载安装Docker版FRPS 公司网络有公网ip，我的群晖NAS放在公司里。在NAS上安装docker版的frps。具体步骤如下：
+ 点击docker注册表 搜索frp 下载oldiy/frps  配置FRPS 路由器端口转发 配置路由器端口转发，将路由器的端口映射到对应的NAS端口上。
+需要将路由器端口映射到NAS上，例如将路由器的8000端口转发到NAS的7000端口上。
+整个映射关系如下表所示：
+&amp;lt;th style=&amp;quot;text-align:center;&amp;quot;&amp;gt; 路由器 &amp;lt;/th&amp;gt; &amp;lt;th style=&amp;quot;text-align:center;&amp;quot;&amp;gt; NAS &amp;lt;/th&amp;gt; &amp;lt;th style=&amp;quot;text-align:center;&amp;quot;&amp;gt; 容器 &amp;lt;/th&amp;gt;  &amp;lt;td style=&amp;quot;text-align:center;&amp;quot;&amp;gt; 8000 &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;text-align:center;&amp;quot;&amp;gt; 7000 &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;text-align:center;&amp;quot;&amp;gt; 7000 &amp;lt;/td&amp;gt;  &amp;lt;td style=&amp;quot;text-align:center;&amp;quot;&amp;gt; 8000 &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;text-align:center;&amp;quot;&amp;gt; 7000 &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;text-align:center;&amp;quot;&amp;gt; 7000 &amp;lt;/td&amp;gt;  如果需要用到其他端口，也需要建立从路由器→NAS→容器的映射关系。
+FRPS配置文件 在群晖NAS上安装frps服务端。配置文件如下：
+[common] bind_port = 7000 bind_udp_port = 7001 dashboard_port = 7500 dashboard_user = ****** dashboard_pwd = ****** token = *****  将文件保存到frps.</description>
+    </item>
+    
+    <item>
+      <title>Typora中文主题安装记录</title>
+      <link>http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 06 May 2019 03:23:14 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <description>在Typora默认的主题中，中文都是以宋体显示的。比较丑。在官方的在线主题中有Han和Catfish两个主题对中文的支持较好。
+安装主题  点击File→Preference→Get Themes 下载Han和Catfish两个主题。Han下载后只有一个css文件。Catfish是一个压缩包。 点击File→Preference→Open Theme Folder 将han.css和Catfish-master下的所有文件拷贝到themes文件夹中。打开catfish文件夹，选中所有ttc和otf结尾的字体文件后右键安装。 重启Typora完成。   </description>
+    </item>
+    
+    <item>
+      <title>VS Code 安装记录</title>
+      <link>http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 05 May 2019 02:59:26 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <description>VScode项目结构简介 VScode使用的是文件夹命名项目，需要新建一个文件夹作为你的项目，这个文件夹下放你的源文件，如果需要运行，还需要在这个文件夹下新建.vscode文件夹，在.vscode文件夹下配置这个项目如何运行。
+下面是一个典型的项目结构：
+├─项目名
+│ │ 源文件1
+│ │ 源文件2
+│ │ ……
+│ │ 源文件n
+│ │
+│ └─.vscode
+│ tasks.json
+│ settings.json
+安装Python插件  首先在本机上安装python。 打开vs code，在扩展商店中搜索python并安装。 选择python解释器：Ctrl+Shit+P打开命令行，输入Python: Select Interpreter，选择需要使用的python解释器。  关闭右侧导航栏  设置里面搜索 “editor.minimap.enabled”: 设置为false即可   </description>
+    </item>
+    
+    <item>
+      <title>基于Ubuntu搭建FTP文件服务器</title>
+      <link>http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 09 Apr 2019 08:13:17 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>安装并启动 FTP 服务 安装 VSFTPD
+使用 apt-get 安装 [vsftpd]：
+sudo apt-get install vsftpd -y  vsftpd 是在 Linux 上被广泛使用的 FTP 服务器，根据其官网介绍，它可能是 UNIX-like 系统下最安全和快速的 FTP 服务器软件。
+启动 VSFTPD
+安装完成后 VSFTPD 会自动启动，通过 netstat 命令可以看到系统已经[监听了 21 端口]：
+sudo netstat -nltp | grep 21  如果没有启动，可以手动开启 VSFTPD 服务：
+sudo systemctl start vsftpd.service  FTP 协议默认使用 21 端口作为服务端口
+配置用户访问目录 新建用户主目录
+sudo mkdir /home/uftp  执行完后，在这里 /home/uftp [?] 就能看到新建的文件夹 uftp 了。
+创建登录欢迎文件 [?]：
+sudo touch /home/uftp/welcome.</description>
+    </item>
+    
+    <item>
+      <title>远程访问家里电脑文件的方法</title>
+      <link>http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 05 Mar 2019 01:35:02 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>【转】keepass技巧——正确设定代码以避免输入错误</title>
+      <link>http://peterz.xyz/2012/05/16/%E8%BD%ACkeepass%E6%8A%80%E5%B7%A7-%E6%AD%A3%E7%A1%AE%E8%AE%BE%E5%AE%9A%E4%BB%A3%E7%A0%81%E4%BB%A5%E9%81%BF%E5%85%8D%E8%BE%93%E5%85%A5%E9%94%99%E8%AF%AF/</link>
+      <pubDate>Wed, 16 May 2012 09:19:49 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2012/05/16/%E8%BD%ACkeepass%E6%8A%80%E5%B7%A7-%E6%AD%A3%E7%A1%AE%E8%AE%BE%E5%AE%9A%E4%BB%A3%E7%A0%81%E4%BB%A5%E9%81%BF%E5%85%8D%E8%BE%93%E5%85%A5%E9%94%99%E8%AF%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu下配置Evolution收发Gmail邮件</title>
+      <link>http://peterz.xyz/2009/07/04/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEevolution%E6%94%B6%E5%8F%91gmail%E9%82%AE%E4%BB%B6/</link>
+      <pubDate>Sat, 04 Jul 2009 18:48:13 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2009/07/04/ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AEevolution%E6%94%B6%E5%8F%91gmail%E9%82%AE%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>什么是SEO</title>
+      <link>http://peterz.xyz/2009/05/19/%E4%BB%80%E4%B9%88%E6%98%AFseo/</link>
+      <pubDate>Tue, 19 May 2009 15:13:52 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2009/05/19/%E4%BB%80%E4%B9%88%E6%98%AFseo/</guid>
+      <description>&amp;lt;p&amp;gt; 为什么要进行搜索引擎优化： &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 一个企业网站代表一个企业的形象，是对企业或企业产品的推广，是实际业务的延伸。在搜索结果中排名越靠前被点击进入的比例越高，排名越靠后就越低，目标客户就越难找到你，这就是为什么要提高网站的排名、为什么要进行搜索引擎优化的原因。&amp;lt;br /&amp;gt; SEO功能首先要了解以下5点: &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 1.了解搜索引擎如何抓取网页和如何索引网页&amp;lt;br /&amp;gt; 你需要知道一些搜索引擎的基本工作原理，各个搜索引擎之间的区别，搜索机器人（SE robot或叫web crawler）如何进行工作，搜索引擎如何对搜索结果进行排序等等。 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 2.Meta标签优化&amp;lt;br /&amp;gt; 主要包括主题（Title)，网站描述(Description)，和关键字（Keywords）。还有一些其它的隐藏文字比如Author（作者），Category（目录），Language（编码语种）等。我们系统的SEO设置就为您提供了网站描述和关键字的输入，其他信息系统会根据您的内容自动给出。 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 3.如何选取关键词并在网页中放置关键词&amp;lt;br /&amp;gt; 搜索就得用关键词。关键词分析和选择是SEO最重要的工作之一。首先要给网站确定主关键词（一般在5个上下），然后针对这些关键词进行优化，包括关键词密度（Density），相关度（Relavancy），突出性（Prominency）等等。 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 4.了解主要的搜索引擎&amp;lt;br /&amp;gt; 虽然搜索引擎有成千上万，但是对网站流量起决定作用的就那么几个。比如英文的主要有Google，Inktomi，Altavista等；中文的有百度，搜狐等。不同的搜索引擎对页面的抓取和索引、排序的规则都不一样。还要了解各搜索门户和搜索引擎之间的关系，比如Yahoo和AOL网页搜索用的是Google的搜索技术，MSN用的是Looksmart和Open Directory的技术。 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 5.主要的互联网目录&amp;lt;br /&amp;gt; Yahoo自身不是搜索引擎，而是一个大型的网站目录，Open Directory也不是，他们和搜索引擎的主要区别是网站内容的收集方式不同。目录是人工编辑的，主要收录网站主页；搜索引擎是自动收集的，除了主页外还抓取大量的内容页面。 &amp;lt;/p&amp;gt;  </description>
+    </item>
+    
+    <item>
+      <title>[转]Windows XP系统下建立VPN服务器(图)</title>
+      <link>http://peterz.xyz/2009/05/19/%E8%BD%ACwindows-xp%E7%B3%BB%E7%BB%9F%E4%B8%8B%E5%BB%BA%E7%AB%8Bvpn%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE/</link>
+      <pubDate>Tue, 19 May 2009 15:13:27 +0000</pubDate>
+      
+      <guid>http://peterz.xyz/2009/05/19/%E8%BD%ACwindows-xp%E7%B3%BB%E7%BB%9F%E4%B8%8B%E5%BB%BA%E7%AB%8Bvpn%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE/</guid>
+      <description>&amp;lt;div&amp;gt; &amp;lt;span&amp;gt;&amp;lt;br /&amp;gt; 建立VPN：在计算机管理——&amp;gt;服务里，将Routing and Remote Access这项服务启用并设成自动启动，（将本机的防火墙先关闭）系统默认是禁用的，启用后，在网上邻居里，会出现在一个传入连接&amp;lt;br /&amp;gt; 双击这个传入连接。在常规里&amp;lt;/span&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;div&amp;gt; &amp;lt;span&amp;gt;&amp;lt;img src=&amp;quot;http://farm4.static.flickr.com/3408/3542525289_f824bce143.jpg&amp;quot; border=&amp;quot;0&amp;quot; /&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;p&amp;gt; &amp;lt;span&amp;gt;，好，这样一个VPN已经架设好了，下面我们来建立一个VPN的拨号。&amp;lt;br /&amp;gt; 输入用户名，也就是刚刚传入连接的里的，USER，下面我所选的用户名qiyue。也就是你本机的用户名和密码。好，输入用户名和密码拨号。好拨号成功了，我们再来看看能不能正常打开网页，好，一个网页也打不开。为什么？这是因为我们还没有在本机路由表里添加路由。&amp;lt;br /&amp;gt; 本机IP地址为192.168.0.9,&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;&amp;lt;br /&amp;gt; 只能访问192.168.0.9,所以我们要通过route add 添加一个静态的路由表&amp;lt;br /&amp;gt; 添加一个我们VPN所要访问的网段，比如，ping &amp;lt;font color=&amp;quot;#0066a7&amp;quot;&amp;gt;www.163.com&amp;lt;/font&amp;gt;,得到IP地址：220.181.28.53&amp;lt;br /&amp;gt; 再用route add 220.181.28.0 mask 255.255.255.0 125.124.142.238，这163这个IP段都添加进去，所以我们只可以打开和163在同一网段的网站，&amp;lt;br /&amp;gt; 现在你拨的VPN就可以访问163了哦，要想访问其他的网站或上QQ，自己添加路由表。&amp;lt;br /&amp;gt; 对方如果已接入了宽带的，我们在VPN设置的时候记得要把TCP/IP属性制定为内网的地址，在允许呼叫方访问我的局域网打钩，允许呼叫的计算机指定其IP地址也打钩。&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;span&amp;gt;&amp;lt;br /&amp;gt; 访问方&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;p&amp;gt; &amp;lt;span&amp;gt;&amp;lt;br /&amp;gt; 网上邻居 &amp;amp;#8212; 属性，创建一个新的连接——连接到我工作场所的网络——虚拟专用网络连接——公司名（随便）——主机名或IP地址（我这里用的是DNS动态域名，july01.3322.org）然后一路完成。输入用户名和密码进入。&amp;lt;/span&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; &amp;lt;span&amp;gt;关于访问方连上VPN后宽带连接会自动断掉，那是要去在VPN连接上点属性，把默认网关前面的勾去掉。&amp;lt;/span&amp;gt; &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; &amp;lt;span&amp;gt;&amp;lt;img src=&amp;quot;http://farm4.static.flickr.com/3317/3542524999_91335c7e83.jpg&amp;quot; border=&amp;quot;0&amp;quot; /&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;/p&amp;gt;&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;p&amp;gt; &amp;lt;ins&amp;gt;&amp;lt;ins&amp;gt;&amp;lt;/ins&amp;gt;&amp;lt;/ins&amp;gt;&amp;lt;/div&amp;gt; </description>
+    </item>
+    
+  </channel>
+</rss>

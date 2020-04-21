@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ubuntu环境下编译内核详解 | 槑烎</title>
+    <meta property="og:title" content="ubuntu环境下编译内核详解 - 槑烎">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2011-11-16T20:41:17&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2011-11-16T20:41:17&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="ubuntu环境下编译内核详解">
+        <meta name="author" content="leo_thronton">
+        
+    <meta property="og:url" content="http://peterz.xyz/2011/11/16/ubuntu%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8%E8%AF%A6%E8%A7%A3/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://peterz.xyz/">
+                        槑烎
+                    </a>
+                
+                <p class="description">1,2,∞</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://peterz.xyz/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">ubuntu环境下编译内核详解</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2011年11月16日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/ubuntu'>ubuntu</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;p&gt;
+  二、解压源代码&lt;br /&gt; 注意，网上很多教程上说应该解压到 /usr/src,纯属以讹传讹，linux掌门人linus说解压到任何目录上都可以。当然，linus的说法是正确的。我放在自己的主目录下的src目录。&lt;br /&gt; 如果你下载源代码是放到自己的主目录下或者运行上面的wget下载的，那么运行下列命令：&lt;br /&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span&gt;$ cd ~&lt;br /&gt; $ mkdir src &amp;&amp; tar jfx linux-2.6.25.10.tar.bz2 -C src/&lt;br /&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+  &lt;span&gt;&lt;/p&gt; 
+  
+  &lt;p&gt;
+    现在，源代码就在 ~/src/linux-2.6.25.10&lt;br /&gt; 进入源代码的目录，准备下一步的工作。后面都在这个目录里面进行。&lt;br /&gt;&lt;/span&gt;
+  &lt;/p&gt;
+  
+  &lt;div&gt;
+    &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  
+  &lt;div&gt;
+    &lt;span&gt;$ cd ~/src/linux-2.6.25.10&lt;br /&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  
+  &lt;p&gt;
+    &lt;span&gt;&lt;/p&gt; 
+    
+    &lt;p&gt;
+      三、开始编译前的准备工作。&lt;br /&gt; 首先，清理以前编译时留下的临时文件。如果是刚刚解开的包，不需要执行这步。如果是第二次或者是第n次编译，那么一定要执行。&lt;br /&gt; 相关命令如下：&lt;br /&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    
+    &lt;div&gt;
+      &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+      &lt;span&gt;$ sudo make mrproper&lt;br /&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;p&gt;
+      &lt;span&gt;&lt;br /&gt; 网上很多教程上说把现在使用的内核的config拷贝过来参考，据实验，是不需要的，ubuntu还有&lt;br /&gt; debian会自动做这步。不过这条命令倒是可以学习一下。当然你可以将以前的配置拷贝过来。&lt;br /&gt; 命令：&lt;br /&gt;&lt;/span&gt;
+    &lt;/p&gt;
+    
+    &lt;div&gt;
+      &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+      &lt;span&gt;cp /boot/config-`uname -r` ./.config&lt;br /&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    
+    &lt;p&gt;
+      &lt;span&gt;&lt;/p&gt; 
+      
+      &lt;p&gt;
+        四、开始配置内核选项。&lt;br /&gt; 相关命令：&lt;br /&gt;&lt;/span&gt;
+      &lt;/p&gt;
+      
+      &lt;div&gt;
+        &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      
+      &lt;div&gt;
+        &lt;span&gt;$sudo make menuconfig&lt;br /&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      
+      &lt;p&gt;
+        &lt;span&gt;&lt;/p&gt; 
+        
+        &lt;p&gt;
+          配置用到的键只有几个，esc退出菜单;空格改变选项状态;光标键上下左右移动,回车选定。&lt;br /&gt; 选项意义：M是编译成可以随时加入的模块，*是编译进入内核，空就是不要。&lt;br /&gt; 配置选项非常多，具体配置可以参考金步国先生翻译的资料：Linux 2.6.19.x 内核编译配置选项。&lt;br /&gt; 参考网址：http://lamp.linux.gov.cn/Linux/kernel_options.html&lt;br /&gt; 为了一次成功，请大家遵循一个原则，如果你自己使用的内核已经选用了某个选项，如果你没用充分的理由，不要随便改动。这样虽然内核不那么精简，但是不容易出现问题。&lt;br /&gt; 我们可以精简的部分是硬件模块部分，对于自己没有的硬件要毫不犹豫的清除。&lt;br /&gt; 如果你很执着，或者你有洁癖，你也可以一项项对过去，按照金步国先生的资料描述去选择基本上没有问题。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          五、必须强调的几个选项:&lt;br /&gt; 1、在“General setup”里面的“Prompt for development and/or incomplete code/drivers”金步国认为是不需要。但是如果你的硬件比较新，那几乎是必须选的，这样，我们才可以找到4965无线网卡，alsa声音驱动等等。&lt;br /&gt; Kernel log buffer size 我选15，双核。如果你用ia64，要选16。&lt;br /&gt; Control Group support 集群支持？可以不要&lt;br /&gt; Choose SLAB allocator (SLUB (Unqueued Allocator)) 内存管理模式slab和slub选择slub。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          2、在“Block layer”里，假如没有2TB的硬盘，就去掉：Support for Large Block Devices 。Support for Large Single Files 也不需要，谁有2TB的文件？
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          3、Processor type and features中是关于cpu的，要认真选。&lt;br /&gt; Symmetric multi-processing support是打开多核的开关，我的cpu是双核的，选中。&lt;br /&gt; Processor family (Core 2/newer Xeon) 我的是Core 2/newer Xeon。找到自己的cpu后，把Generic x86 support选项取消。&lt;br /&gt; Subarchitecture Type 选(PC-compatible)&lt;br /&gt; Maximum number of CPUs 输入自己的核心数目，我输入2。&lt;br /&gt; SMT (Hyperthreading) scheduler support说的是超线程技术，P4有支持的，我的t8100不支持，目前大部分市场上的家用cpu都不支持。&lt;br /&gt; High Memory Support (4GB) 1G以下选1G；我是3G，选4G；4G以上的选16G&lt;br /&gt; 在“ Timer frequency ”里，默认是250Hz，较新的cpu都可以选择了1000Hz，性能更好。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          4、Power management options中把APM (Advanced Power Management) BIOS support关闭。现在的电脑都用acpi了。&lt;br /&gt; CPU Frequency scaling 是笔记本cpu节电技术&lt;br /&gt; Default CPUFreq governor (conservative) cpu节电模式有四个，笔记本默认选conservative比较好。&lt;br /&gt; ACPI Processor P-States driver 必须选，不然CPU Frequency就不能用。&lt;br /&gt; 后面的可选自己硬件相关的，我选的是Intel Enhanced SpeedStep和 Intel Speedstep on ICH-M chipsets，其他的统统消灭。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          5、Bus options的选择：&lt;br /&gt; Bus options (PCI, PCMCIA, EISA, MCA, ISA)&lt;br /&gt; PCI support&lt;br /&gt; PCI Express support 现在新买的机器基本上都是PCI Express了&lt;br /&gt; ISA support 较新的新机器没有ISA设备，可以去掉&lt;br /&gt; MCA support 去掉&lt;br /&gt; NatSemi SCx200 support 去掉&lt;br /&gt; PCI Hotplug Support&lt;br /&gt; Support for PCI Hotplug (EXPERIMENTAL) 如果没有PCI热插拔设备，去掉&lt;br /&gt; 这里的选项可以考虑全部编译进内核，而不是以模块形式存在。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          6、Device Drivers是重点，由于linux不但面向个人工作站，更多的是面向服务器的应用，所以可以把自己机器上没有的硬件全部去掉，而不用面面俱到。但是通用型的选项要慎重。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          比如在网卡的部分，除了我的千兆网卡 Broadcom Tigon3 support和4965无线网卡Intel Wireless WiFi 4965AGN，其余的硬件支持统统去掉。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          再比如声卡部分，我的是hd声卡，我只是在PCI devices中，选intel hd 声卡，再选Build IDT/Sigmatel HD-audio codec support，除此之外的硬件支持全部去掉。&lt;br /&gt; 声卡还有一个细节，在ubuntu7.10里面， 需要在/etc/modprobe.d/alsa-base后面添加options snd-hda-intel probe_mask=1 model=3stack，这样我的笔记本喇叭才可以发声，不然只有外接耳机或者音箱。这次编译以后，这个动作就不必了，但是两个耳机插口只有一个可以用了。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          再比如我的电脑中没有agp，就可以直接把agp相关的选项全部取消。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          要注意的：&lt;br /&gt; ATA/ATAPI/MFM/RLL support&lt;br /&gt; Include IDE/ATA-2 DISK support 如果你的/boot是放在IDE硬盘上，那么这里一定要选＊，选M都不行。否则启动时会出现“waiting for root file system”的提示而停滞不前。&lt;br /&gt; SCSI emulation support 要用刻录机，必须选。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          SCSI device support 现在都是SATA硬盘，一定要选＊&lt;br /&gt; SCSI disk support 如果你的/boot放在SATA硬盘上，一定要选＊。&lt;br /&gt; SCSI CDROM support 虽然康宝刻录机是ide接口的，但是必须把它当成scsi接口的，这是老问题了。用刻录机，必须选。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          Graphics support&lt;br /&gt; Support for frame buffer devices 选中，进入选择&amp;nbsp;&lt;br /&gt; VESA VGA graphics support 选上，不然字符界面启动会有问题，&lt;br /&gt; 后面的显卡选择：由于我的显卡是nvidia 8400gs，要自己安装nvidia公司的驱动，所以一个都没有选。这样导致ubuntu开机动画会出问题，我索性在grub中的splash字符全部删除，把开机动画关闭。字符界面很正常。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          Console display driver support 有人开机后字符控制台错误，就是这部分选项没有选，出问题了。&lt;br /&gt; Framebuffer Console support 需要打开。&lt;br /&gt; Bootup logo 开机图标，会在自检的画面上加上个性图标。需要在grub上添加“vga＝”的选项，可以参考http://dotimes.com/articles /t23-slackware-framebuffer.html
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          7、File systems&lt;br /&gt; Filesystem in Userspace support 简称fuse。是必选的，如果你要用windows分区。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          CD-ROM/DVD Filesystems&lt;br /&gt; ISO 9660 CDROM file system support 一般选＊&lt;br /&gt; DOS/FAT/NT Filesystems&lt;br /&gt; VFAT (Windows-95) fs support 有FAT32分区就选＊吧&lt;br /&gt; NTFS file system support 有NTFS分区就选＊吧&lt;br /&gt; NTFS write support 如果想对 NTFS分区进行写操作，选＊
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          必须将启动盘的文件系统编译进内核，默认是编译成模块，这样无法启动系统。ubuntu采用的文件系统是ext3,请把ext2,ext3相关的必要选项都编译进入内核。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          8、Virtualization这个大类是我多花几百元买t8100的主要原因，因为t8100支持intel vt技术&lt;br /&gt; 使linux上的虚拟机的性能大幅度提高。这里的选项我除了amd的，其他都编译成模块。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          9、全部设置完成，最后一项是保存设置。&lt;br /&gt; 按照我的习惯，先在上一层目录保存一个备份，文件名类似 ../config20080630&lt;br /&gt; 然后再保存到当起目录,文件名 .config&lt;br /&gt; 退出设置程序。
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+          六、开始编译内核。&lt;br /&gt; ubuntu的工具是make-kpkg,和其他的发行版相比，步骤相对简单。&lt;br /&gt; 相关命令:&lt;br /&gt;&lt;/span&gt;
+        &lt;/p&gt;
+        
+        &lt;div&gt;
+          &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        
+        &lt;div&gt;
+          &lt;span&gt;$sudo make-kpkg clean&amp;nbsp; &amp;nbsp;这条命令好像不要超级权限，很多资料上说要，不过这不是原则问题。&lt;br /&gt; $ sudo make-kpkg -initrd &amp;#8211;initrd &amp;#8211;append-to-version=dell1400 kernel_image kernel-headers&lt;br /&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        
+        &lt;p&gt;
+          &lt;span&gt;&lt;/p&gt; 
+          
+          &lt;p&gt;
+            上述命令中的dell1400可以用自己喜欢的字符代替，最后的字符一定是数字.&lt;br /&gt; 输完上述命令回车之前，建议大家把浏览器还有别的运用程序都关掉，机器开始的工作比较艰苦。我的机器大概十几分钟。
+          &lt;/p&gt;
+          
+          &lt;p&gt;
+            七、安装内核&lt;br /&gt; 编译完成就是安装工作。编译好的内核在上一层目录。包括linux-headers-&amp;#8230;-_i386.deb和linux-image-&amp;#8230;-i386.deb两个文件，如果你不搞开发的话，只要安装内核就可以，头文件以后要用的时候再说。&lt;br /&gt; 安装相关命令：&lt;br /&gt;&lt;/span&gt;
+          &lt;/p&gt;
+          
+          &lt;div&gt;
+            &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          
+          &lt;div&gt;
+            &lt;span&gt;$ cd ..&lt;br /&gt; $ sudo dpkg -i&amp;nbsp; &amp;nbsp;linux-image-（按tab键）&lt;br /&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          
+          &lt;p&gt;
+            &lt;span&gt;&lt;/p&gt; 
+            
+            &lt;p&gt;
+              文件名很长，如果不用tab自动补足是不可能的，tab键万岁。&lt;br /&gt; 安装完成后和老内核比较一下大小&lt;br /&gt;&lt;/span&gt;
+            &lt;/p&gt;
+            
+            &lt;div&gt;
+              &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;div&gt;
+              &lt;span&gt;$ ls -l /boot/&lt;br /&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;p&gt;
+              &lt;span&gt;&lt;/p&gt; 
+              
+              &lt;p&gt;
+                八、重新启动验证新内核。&lt;br /&gt;&lt;/span&gt;
+              &lt;/p&gt;
+              
+              &lt;div&gt;
+                &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+              &lt;/div&gt;
+              
+              &lt;div&gt;
+                &lt;span&gt;$ sudo reboot&lt;br /&gt;&lt;/span&gt;
+              &lt;/div&gt;
+              
+              &lt;p&gt;
+                &lt;span&gt;&lt;/p&gt; 
+                
+                &lt;p&gt;
+                  九、显卡驱动&lt;br /&gt; 如果你的显卡和我一样是nvidia显卡，启动之后往往无法正常进入x－window。即使能看到gdm登录界面，效果也是很差的。&lt;br /&gt; 那么就要安装nvidia驱动。&lt;br /&gt; 用ctrl+alt+f1 进入字符命令行，输入用户名，密码登录。&lt;br /&gt; 命令：&lt;br /&gt;&lt;/span&gt;
+                &lt;/p&gt;
+                
+                &lt;div&gt;
+                  &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                
+                &lt;div&gt;
+                  &lt;span&gt;下载驱动&lt;br /&gt; $ wget http://us.download.nvidia.com/XFree86/Linux-x86/173.14.12/NVIDIA-Linux-x86-173.14.12-pkg1.run&lt;/p&gt; 
+                  
+                  &lt;p&gt;
+                    $sudo －s&lt;br /&gt; 输入密码取得超级权限。&lt;br /&gt; ＃ps ax&lt;br /&gt; 看看和gdm相关的进程，把这些进程全部关闭;用sudo /etc/init.d/gdm stop有可能有一个进程没有关闭：&lt;br /&gt; ＃kill 进程号&lt;br /&gt; 然后安装nvidia显卡驱动,当然驱动要先下好，到nvidia驱动所在的目录里，运行：&lt;br /&gt; ＃ sh ./NVIDIA-Linux-x86-173.14.12-pkg1.run&lt;br /&gt;&lt;/span&gt;&lt;/div&gt; 
+                    
+                    &lt;p&gt;
+                      &lt;span&gt;&lt;br /&gt; 重新启动以后就ok。要用nvidia的驱动，每次升级内核都要这么做。&lt;/p&gt; 
+                      
+                      &lt;p&gt;
+                        十、无线网卡&lt;br /&gt; 相关的内核选项是&lt;br /&gt; Networking &amp;#8212;&gt;&lt;br /&gt; Wireless &amp;#8212;&gt;&lt;br /&gt; Generic IEEE 802.11 Networking Stack (mac80211)&lt;br /&gt; 还有4965的驱动。
+                      &lt;/p&gt;
+                      
+                      &lt;p&gt;
+                        4965无线网卡驱动虽然已经编入内核，但没有firmware无法使用。需要把原来内核的firmware拷贝到新内核对应的目录，名字和内核一致,我的内核是linux－image-2.6.25.10dell1400，那建的目录名就是2.6.25.10dell1400。
+                      &lt;/p&gt;
+                      
+                      &lt;p&gt;
+                        &lt;/span&gt;
+                      &lt;/p&gt;
+                      
+                      &lt;div&gt;
+                        &lt;span&gt;&lt;strong&gt;代码:&lt;/strong&gt;&lt;/span&gt;
+                      &lt;/div&gt;
+                      
+                      &lt;div&gt;
+                        &lt;span&gt;具体命令：&lt;br /&gt; $ cd /lib/firmware/&lt;br /&gt; $ sudo mkdir 2.6.25.10dell1400&lt;br /&gt; 把你的老内核中的4965的firmware拷贝过来。&lt;br /&gt; $ sudo cp 2.6.24-16-generic/* 2.6.25.10dell1400/&lt;/p&gt; 
+                        
+                        &lt;p&gt;
+                          上面的命令和下面的命令是等价的：&lt;br /&gt; $ cd /lib/firmware/&lt;br /&gt; $ sudo cp -R 2.6.24-16-generic/&amp;nbsp; 2.6.25.10dell1400/&lt;br /&gt;&lt;/span&gt;&lt;/div&gt; 
+                          
+                          &lt;p&gt;
+                            &lt;span&gt;&lt;/p&gt; 
+                            
+                            &lt;p&gt;
+                              重新启动系统，无线网卡就正常了。&amp;nbsp;
+                            &lt;/p&gt;
+                            
+                            &lt;p&gt;
+                              附编译使用的机器配置：dell vostro 1400,t8100,nvidia 8400cs显卡，内置SigmaTel STAC9228芯片的声卡，4965无线网卡，BCM5906M千兆网卡，3G内存,160G硬盘,combo刻录。&amp;nbsp;&lt;br /&gt; 编译系统版本：ubuntu 8.04桌面版.&lt;/span&gt;
+                            &lt;/p&gt;
+                            
+                            &lt;div class=&quot;PoweredByWebStory&quot; style=&quot;margin-top:15px;margin-bottom:10px;&quot;&gt;
+                              &lt;a target=&quot;_blank&quot; href=&quot;http://sns.juziyue.com/webinvite.php?u=337&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img src=&quot;http://image.juziyue.com/WebStoryLogo24.png&quot; alt=&quot;菊子曰&quot; style=&quot;border:0;&quot; /&gt;&lt;/a&gt;&amp;nbsp;我用&lt;a target=&quot;_blank&quot; href=&quot;http://sns.juziyue.com/webinvite.php?u=337&quot; rel=&quot;noopener noreferrer&quot;&gt;菊子曰&lt;/a&gt;写博客，你呢？
+                            &lt;/div&gt;&lt;/div&gt;</code></pre>
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://peterz.xyz/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="FRP安装记录">FRP安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="Typora中文主题安装记录">Typora中文主题安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="VS Code 安装记录">VS Code 安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="基于Ubuntu搭建FTP文件服务器">基于Ubuntu搭建FTP文件服务器</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/" title="远程访问家里电脑文件的方法">远程访问家里电脑文件的方法</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/11/20/scrapy-shell%E5%90%AF%E5%8A%A8ipython/" title="Scrapy shell启动IPython">Scrapy shell启动IPython</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/" title="win10下安装splash">win10下安装splash</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/" title="在Scrapy使用splash爬取动态页面">在Scrapy使用splash爬取动态页面</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/" title="安装scrapy">安装scrapy</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/" title="将scrapy爬到的内容存入sqlite数据库">将scrapy爬到的内容存入sqlite数据库</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="http://peterz.xyz/categories/ubuntu/">ubuntu (7)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/">东拉西扯 (2)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%88%91%E7%9A%84/">我的 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%94%B6%E9%9B%86/">收集 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类 (127)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E7%88%AC%E8%99%AB/">爬虫 (4)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet/">计算机与 Internet (9)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%B4%B4%E8%B4%B4%E8%B4%B4/">贴贴贴 (1)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://peterz.xyz/tags/like/">like</a>
+    
+    <a href="http://peterz.xyz/tags/microsoft/">Microsoft</a>
+    
+    <a href="http://peterz.xyz/tags/system/">system</a>
+    
+    <a href="http://peterz.xyz/tags/technical/">technical</a>
+    
+    <a href="http://peterz.xyz/tags/windows/">Windows</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%8F%8C%E5%88%83%E5%89%91/">双刃剑</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%BE%AE%E9%80%9F%E6%91%84%E5%BD%B1/">微速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%85%A2%E9%80%9F%E6%91%84%E5%BD%B1/">慢速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%88%90%E5%8A%9F/">成功</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%96%87%E4%BB%B6%E5%A4%B9/">文件夹</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/">无线网卡</a>
+    
+    <a href="http://peterz.xyz/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%86%E9%A2%91/">视频</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">解决方法</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://peterz.xyz/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="http://peterz.xyz/">槑烎 By 槑烎</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+</body>
+
+</html>

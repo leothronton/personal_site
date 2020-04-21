@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>[转]解决DNS域名劫持的几种方法 | 槑烎</title>
+    <meta property="og:title" content="[转]解决DNS域名劫持的几种方法 - 槑烎">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2009-08-18T01:01:57&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2009-08-18T01:01:57&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="[转]解决DNS域名劫持的几种方法">
+        <meta name="author" content="leo_thronton">
+        
+    <meta property="og:url" content="http://peterz.xyz/2009/08/18/%E8%BD%AC%E8%A7%A3%E5%86%B3dns%E5%9F%9F%E5%90%8D%E5%8A%AB%E6%8C%81%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://peterz.xyz/">
+                        槑烎
+                    </a>
+                
+                <p class="description">1,2,∞</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://peterz.xyz/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">[转]解决DNS域名劫持的几种方法</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2009年8月18日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB'>未分类</a></span>
+            
+        </div>
+        
+        
+        
+        <div class="post-content">
+            <!-- raw HTML omitted -->
+<pre><code>&lt;p&gt;
+  dns劫持现在不算新名词了，从理解WWW以后，网络的普及，it知识的丰富积累，大家都知道了能够浏览网络的基本原理：由客户端发送域名请求给dns，dns通过遍历查询dns数据库，来解析此域名对应的ip，然后反馈至浏览器客户端，客户端通过ip与对方建立数据连接；这时，很关键的一环，就是dns服务，如果dns把你想要解析的地方，解析为错误的另一个地方，这地方是劫持者有自身利益的地方，例：明明访问&lt;a href=&quot;http://www.linwan.net.cn/&quot;&gt;http://www.linwan.net.cn/&lt;/a&gt;,却被引导至另外一个网址，比如：&lt;a href=&quot;http://www.smallit.cn/&quot;&gt;http://www.smallit.cn/&lt;/a&gt; ；另外，还有就是，排除自身电脑问题的弹出窗口这个过程，就称之为dns劫持，至于dns劫持的利益，这就是另外一个话题了。
+&lt;/p&gt;
+
+&lt;p&gt;
+  遇到dns被劫持，让dns服务提供者解决这个问题，是比较矛盾的；因为，劫持者，最有可能的就是他们；另外一种最直接的解决办法就是换用其他dns。
+&lt;/p&gt;
+
+&lt;p&gt;
+  国内的dns服务器，全国各地的列表有很多，比如河南网通的是：202.102.224.68 202.102.227.68，河南电信的是：219.150.150.150 219.150.32.132，后面附有列表，有需要的可以查询下；
+&lt;/p&gt;
+
+&lt;p&gt;
+  另外，国外的dns服务器可用的也非常多，我推荐大家使用OpenDNS提供的DNS服务器，OpenDNS是一个提供免费DNS服务的网站，口号是更安全、更快速、更智能。
+&lt;/p&gt;
+
+&lt;p&gt;
+  　　更换dns服务器的方法非常简单，对于宽带拨号用户来说，在“设置”-“网络连接”中找到宽带上网的连接，打开网络连接属性，选择Interner协议（TCP/IP）的属性页里，不要选择自动获取DNS，而要选择“使用下面的DNS服务器地址”，首选DNS服务器和备用DNS服务器分别设置为 208.67.222.222和208.67.220.220，如下图所示，完成后重新连接上网，就可以摆脱服务商对我们的DNS劫持。
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;http://www.linwan.net.cn/upload/2531_1.jpg&quot; border=&quot;0&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;http://www.linwan.net.cn/upload/2531_2.jpg&quot; border=&quot;0&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  设置完请打开验证地址&lt;a href=&quot;http://www.opendns.com/welcome/&quot;&gt;http://www.opendns.com/welcome/&lt;/a&gt;，如出现下面的画面即为设置成功。
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;http://www.linwan.net.cn/upload/2531_3.jpg&quot; border=&quot;0&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  同时使用openDNS可以访问很多被电信网通屏蔽的站点     我们喜欢gmail的访问也会稳定，好像google.com也可以直接访问不用转到google.cn了
+&lt;/p&gt;
+
+&lt;p&gt;
+  还有一些其他功能 OpenDNS Shortcut 类似于域名缩写。
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;img src=&quot;http://www.linwan.net.cn/upload/2531_4.jpg&quot; border=&quot;0&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  英语好的朋友可以去研究一下 &lt;a href=&quot;http://www.opendns.com/&quot;&gt;http://www.opendns.com/&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  国外的dns列表：
+&lt;/p&gt;
+
+&lt;p&gt;
+  新西兰&lt;br /&gt; 202.27.184.3
+&lt;/p&gt;
+
+&lt;p&gt;
+  美国&lt;br /&gt; 165.87.13.129&lt;br /&gt; 165.87.201.244&lt;br /&gt; 205.171.3.65&lt;br /&gt; 205.171.2.65&lt;br /&gt; 198.41.0.4&lt;br /&gt; 198.41.0.4&lt;br /&gt; 198.32.64.12&lt;br /&gt; 192.33.4.12&lt;br /&gt; 192.203.230.10&lt;br /&gt; 192.5.5.241&lt;br /&gt; 192.112.36.4&lt;br /&gt; 192.36.148.17&lt;br /&gt; 192.58.128.30&lt;br /&gt; 192.9.9.3&lt;br /&gt; 193.0.14.129&lt;br /&gt; 128.9.0.107&lt;br /&gt; 128.8.10.90
+&lt;/p&gt;
+
+&lt;p&gt;
+  加拿大&lt;br /&gt; 209.166.160.36&lt;br /&gt; 209.166.160.132
+&lt;/p&gt;
+
+&lt;p&gt;
+  泰国&lt;br /&gt; 202.44.8.34&lt;br /&gt; 202.44.8.2
+&lt;/p&gt;
+
+&lt;p&gt;
+  印度&lt;br /&gt; 202.138.103.100&lt;br /&gt; 202.138.96.2
+&lt;/p&gt;
+
+&lt;p&gt;
+  香港&lt;br /&gt; 205.252.144.228
+&lt;/p&gt;
+
+&lt;p&gt;
+  英国&lt;br /&gt; 193.0.14.129
+&lt;/p&gt;
+
+&lt;p&gt;
+  日本&lt;br /&gt; 202.12.27.33&lt;br /&gt; 202.216.228.18
+&lt;/p&gt;
+
+&lt;p&gt;
+  国内的dns列表：
+&lt;/p&gt;
+
+&lt;p&gt;
+  北京&lt;br /&gt; ns.bta.net.cn 202.96.0.133&lt;br /&gt; ns.spt.net.cn 202.96.199.133&lt;br /&gt; ns.cn.net 202.97.16.195&lt;br /&gt; 202.106.0.20&lt;br /&gt; 202.106.148.1
+&lt;/p&gt;
+
+&lt;p&gt;
+  天津&lt;br /&gt; ns.tpt.net.cn 202.99.96.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  上海&lt;br /&gt; ns.sta.net.cn 202.96.199.132&lt;br /&gt; 202.96.199.133&lt;br /&gt; 202.96.209.5
+&lt;/p&gt;
+
+&lt;p&gt;
+  重庆&lt;br /&gt; 61.128.128.68&lt;br /&gt; 61.128.192.4
+&lt;/p&gt;
+
+&lt;p&gt;
+  浙江&lt;br /&gt; dns.zj.cninfo.net 202.96.102.3
+&lt;/p&gt;
+
+&lt;p&gt;
+  广东&lt;br /&gt; ns.guangzhou.gd.cn 202.96.128.143&lt;br /&gt; dns.guangzhou.gd.cn 202.96.128.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  深圳&lt;br /&gt; ns.shenzhen.gd.cn 202.96.134.133&lt;br /&gt; 202.96.154.8&lt;br /&gt; 202.96.154.15
+&lt;/p&gt;
+
+&lt;p&gt;
+  陕西&lt;br /&gt; ns.snnic.com 202.100.13.11&lt;br /&gt; 西安&lt;br /&gt; 202.100.4.15&lt;br /&gt; 202.100.0.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  辽宁&lt;br /&gt; ns.dcb.ln.cn 202.96.75.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  江苏&lt;br /&gt; pub.jsinfo.net 202.102.29.3
+&lt;/p&gt;
+
+&lt;p&gt;
+  四川&lt;br /&gt; ns.sc.cninfo.net 61.139.2.69
+&lt;/p&gt;
+
+&lt;p&gt;
+  成都&lt;br /&gt; 202.98.96.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  河北&lt;br /&gt; ns.hesjptt.net.cn 202.99.160.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  保定&lt;br /&gt; 202.99.160.68&lt;br /&gt; 202.99.166.4
+&lt;/p&gt;
+
+&lt;p&gt;
+  河南&lt;br /&gt; 202.102.227.68&lt;br /&gt; 202.102.224.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  山西&lt;br /&gt; ns.sxyzptt.net.cn 202.99.198.6
+&lt;/p&gt;
+
+&lt;p&gt;
+  吉林&lt;br /&gt; ns.jlccptt.net.cn 202.98.0.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  山东&lt;br /&gt; 202.102.152.3&lt;br /&gt; 202.102.128.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  淄博&lt;br /&gt; 211.97.168.129
+&lt;/p&gt;
+
+&lt;p&gt;
+  福建&lt;br /&gt; dns.fz.fj.cn 202.101.98.55
+&lt;/p&gt;
+
+&lt;p&gt;
+  湖南&lt;br /&gt; 202.103.100.206
+&lt;/p&gt;
+
+&lt;p&gt;
+  广西&lt;br /&gt; 10.138.128.40
+&lt;/p&gt;
+
+&lt;p&gt;
+  江西&lt;br /&gt; 202.109.129.2
+&lt;/p&gt;
+
+&lt;p&gt;
+  云南&lt;br /&gt; ns.ynkmptt.net.cn 202.98.160.68
+&lt;/p&gt;
+
+&lt;p&gt;
+  武汉&lt;br /&gt; 202.103.24.68&lt;br /&gt; 202.103.0.117
+&lt;/p&gt;
+
+&lt;p&gt;
+  新疆&lt;br /&gt; 61.128.97.73&lt;br /&gt; 61.128.97.74
+&lt;/p&gt;
+
+&lt;p&gt;
+  香港&lt;br /&gt; ns1.netvigator.com 205.252.144.228
+&lt;/p&gt;
+
+&lt;p&gt;
+  澳门&lt;br /&gt; vassun2.macau.ctm.net 202.175.3.8
+&lt;/p&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://peterz.xyz/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://peterz.xyz/2020/01/21/frp%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="FRP安装记录">FRP安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/06/typora%E4%B8%AD%E6%96%87%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="Typora中文主题安装记录">Typora中文主题安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/05/05/vs-code-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" title="VS Code 安装记录">VS Code 安装记录</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/04/09/%E5%9F%BA%E4%BA%8Eubuntu%E6%90%AD%E5%BB%BAftp%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="基于Ubuntu搭建FTP文件服务器">基于Ubuntu搭建FTP文件服务器</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2019/03/05/%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%AE%B6%E9%87%8C%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/" title="远程访问家里电脑文件的方法">远程访问家里电脑文件的方法</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/11/20/scrapy-shell%E5%90%AF%E5%8A%A8ipython/" title="Scrapy shell启动IPython">Scrapy shell启动IPython</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/30/win10%E4%B8%8B%E5%AE%89%E8%A3%85splash/" title="win10下安装splash">win10下安装splash</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%9C%A8scrapy%E4%BD%BF%E7%94%A8splash%E7%88%AC%E5%8F%96%E5%8A%A8%E6%80%81%E9%A1%B5%E9%9D%A2-3/" title="在Scrapy使用splash爬取动态页面">在Scrapy使用splash爬取动态页面</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/24/%E5%AE%89%E8%A3%85scrapy/" title="安装scrapy">安装scrapy</a>
+    </li>
+    
+    <li>
+        <a href="http://peterz.xyz/2018/10/22/%E5%B0%86scrapy%E7%88%AC%E5%88%B0%E7%9A%84%E5%86%85%E5%AE%B9%E5%AD%98%E5%85%A5sqlite%E6%95%B0%E6%8D%AE%E5%BA%93/" title="将scrapy爬到的内容存入sqlite数据库">将scrapy爬到的内容存入sqlite数据库</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li><a href="http://peterz.xyz/categories/ubuntu/">ubuntu (7)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E4%B8%9C%E6%8B%89%E8%A5%BF%E6%89%AF/">东拉西扯 (2)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%88%91%E7%9A%84/">我的 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%94%B6%E9%9B%86/">收集 (3)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类 (127)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E7%88%AC%E8%99%AB/">爬虫 (4)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E-internet/">计算机与 Internet (9)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E8%B4%B4%E8%B4%B4%E8%B4%B4/">贴贴贴 (1)</a></li>
+    
+    <li><a href="http://peterz.xyz/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://peterz.xyz/tags/like/">like</a>
+    
+    <a href="http://peterz.xyz/tags/microsoft/">Microsoft</a>
+    
+    <a href="http://peterz.xyz/tags/system/">system</a>
+    
+    <a href="http://peterz.xyz/tags/technical/">technical</a>
+    
+    <a href="http://peterz.xyz/tags/windows/">Windows</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%8F%8C%E5%88%83%E5%89%91/">双刃剑</a>
+    
+    <a href="http://peterz.xyz/tags/%E5%BE%AE%E9%80%9F%E6%91%84%E5%BD%B1/">微速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%85%A2%E9%80%9F%E6%91%84%E5%BD%B1/">慢速摄影</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%88%90%E5%8A%9F/">成功</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%96%87%E4%BB%B6%E5%A4%B9/">文件夹</a>
+    
+    <a href="http://peterz.xyz/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/">无线网卡</a>
+    
+    <a href="http://peterz.xyz/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/">笔记本</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%86%E9%A2%91/">视频</a>
+    
+    <a href="http://peterz.xyz/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">解决方法</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://peterz.xyz/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="http://peterz.xyz/">槑烎 By 槑烎</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+</body>
+
+</html>
